@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>SuperMap</title>
+    <script type="text/javascript" include="bootstrap" src="/js/include-web.js"></script>
+    <script type="text/javascript" exclude="iclient-classic" src="/dist/classic/include-classic.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <link rel="stylesheet" href="/css/infobox.css">
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="/css/timer.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #fff;
+            width: 100%;
+            height: 100%
+        }
+
+        ol {
+            width: 29px;
+            height: 29px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 100%;
+            margin: 10 20px;
+        }
+
+        #map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #toolbar {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            width: 300px;
+            text-align: center;
+            z-index: 100;
+            border-radius: 4px;
+        }
+
+        #map #r1,
+        #r2,
+        #r3,
+        #r5,
+        #r6,
+        #r7,
+        #rr1,
+        #rr2,
+        #rr3,
+        #rr5,
+        #rr6,
+        #rr7 {
+            /* background: #3A424F; */
+            padding: 0;
+            color: black;
+            margin-left: 2px;
+            /* margin-top: 6px; */
+            width: 200px;
+            display: inline-block;
+        }
+
+        /* .olPopup{
+            display: none;
+        } */
+        .smPopupContent {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="heatMapTimer">
+        <ul class="time-line">
+            <li class="time-btn time-play"></li>
+            <li class="time-item active" data-index="0">
+                <i class='time-date' id="0">2019/12/31</i>
+            </li>
+            <li class="time-item" data-index="1">
+                <i class='time-date' id="1">2020/1/1</i>
+            </li>
+            <li class="time-item" data-index="2">
+                <i class='time-date' id="2">2020/1/7</i>
+            </li>
+            <li class="time-item" data-index="3">
+                <i class='time-date' id="3">2020/1/11</i>
+            </li>
+            <li class="time-item" data-index="4">
+                <i class='time-date' id="4">2020/1/19</i>
+            </li>
+            <li class="time-item" data-index="5">
+                <i class='time-date' id="5">2020/1/20</i>
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var map, baiduLayer, markers, active;
+        var ll = ['wh', 'hh', 'cc']
+        if ('wh' in ll) {
+            console.log('success')
+        }
+        init()
+        function init() {
+            map = new SuperMap.Map("map", {
+                controls: [
+                    new SuperMap.Control.ScaleLine(),
+                    new SuperMap.Control.Zoom(),
+                    new SuperMap.Control.MousePosition(),
+                    new SuperMap.Control.LayerSwitcher(),
+                    new SuperMap.Control.Navigation({  //添加导航控件到map
+                        dragPanOptions: {
+                            enableKinetic: true    //拖拽动画
+                        }
+                    })]
+            });
+            //定义layerWorld图层，获取图层服务地址
+            layerWorld = new SuperMap.Layer.Baidu({
+                transparent: true,
+                cacheEnabled: true
+            }, { maxResolution: "auto", isBaseLayer: true },
+            );
+
+            //为图层初始化完毕添加layerInitialized事件
+            // layerWorld.events.on({ "layerInitialized": addLayer });
+            //初始化标记图层类
+            markers = new SuperMap.Layer.Markers("Markers");
+
+            // layerWorld.events.on({ "layerInitialized": addMarker });
+
+            map.addLayers([layerWorld, markers]);
+            map.setCenter(new SuperMap.LonLat(11471707.42, 4024447.76), 3);
+            addMarker();
+            point1();
+            point2();
+            point3();
+            point4();
+        }
+
+
+        var infowin = null;
+        var infowin1 = null;
+        var infowin2 = null;
+        var infowin3 = null;
+        function point1() {
+            // console.log(infowin)
+            //逻辑：设定infowin为初始值null, 先调用closeInfoWin()函数，后给infowin赋值，后调用addData函数向标注里面添加描述数据
+            closeInfoWin();
+            //初始化popup类
+            contentHTMLs = '<div id="box-top"><h4 style="color: white; margin: 0; padding: 0%; font-size: 18px; text-align: center;">事件及措施</h4></div>'
+            contentHTMLs += '<div id="box-center"><div id="things" style="float: left;">其他省市政策和举措</div></div>'
+            contentHTMLs += '<div id="box-bottom"><span id="r1">2019/12/31</span><br><span id="r2"></span><br><span id="r3"></span><br></div> '
+
+            popup = new SuperMap.Popup.Framed(
+                "info-box",
+                marker1.getLonLat(),
+                new SuperMap.Size(220, 170),
+                // '<div style="margin:5px 10px; padding:0;"><span id="r1"></span><br><span id="r2"></span><br><span id="r3"></span><br></div>',
+                contentHTMLs,
+                null,
+                true,
+                null
+            );
+            infowin = popup
+            // console.log(infowin)
+            infowin.setBackgroundColor('#FFFFFF');
+            // infowin.setOpacity(0.8);
+            // console.log(infowin)
+            //添加弹窗到map图层
+            map.addPopup(infowin);
+
+
+            function closeInfoWin() {
+                if (infowin) {      //相当于判断Boolean(infowin)的值，如果为true执行下面语句，false跳过。js布尔值判断见https://blog.csdn.net/Night_zzz/article/details/100879893
+                    try {
+                        infowin.hide();  //只是隐藏了弹窗/
+                        infowin.destroy();   //释放资源，删除了弹窗
+                    }
+                    catch (e) {
+                    }
+                }
+            }
+
+        }
+        function point2() {
+            //逻辑：设定infowin为初始值null, 先调用closeInfoWin()函数，后给infowin赋值，后调用addData函数向标注里面添加描述数据
+            closeInfoWin1();
+            //初始化popup类
+            contentHTMLs1 = '<div id="box-top"><h4 style="color: white; margin: 0; padding: 0%; font-size: 18px; text-align: center;">事件及措施</h4></div>'
+            contentHTMLs1 += '<div id="box-center"><div id="things" style="float: left;">武汉市政策和举措</div></div>'
+            contentHTMLs1 += '<div id="box-bottom"><span id="r5">2019/12/31</span><br><span id="r6"></span><br><span id="r7"></span><br></div>'
+            popup1 = new SuperMap.Popup(
+                "info-box1",
+                marker2.getLonLat(),
+                new SuperMap.Size(220, 170),
+                contentHTMLs1,
+                // null,
+                true,
+                null
+            );
+            infowin1 = popup1
+            // console.log(infowin)
+            infowin1.setBackgroundColor('#FFFFFF');
+            // console.log(infowin1);
+            //添加弹窗到map图层
+            map.addPopup(infowin1);
+
+
+            function closeInfoWin1() {
+                if (infowin1) {      //相当于判断Boolean(infowin)的值，如果为true执行下面语句，false跳过。js布尔值判断见https://blog.csdn.net/Night_zzz/article/details/100879893
+                    try {
+                        infowin1.hide();  //只是隐藏了弹窗/
+                        infowin1.destroy();   //释放资源，删除了弹窗
+                    }
+                    catch (e) {
+                    }
+                }
+            }
+
+        }
+        function point3() {
+            // console.log(infowin)
+            //逻辑：设定infowin为初始值null, 先调用closeInfoWin()函数，后给infowin赋值，后调用addData函数向标注里面添加描述数据
+            closeInfoWin2();
+            //初始化popup类
+            contentHTMLs = '<div id="box-top"><h4 style="color: white; margin: 0; padding: 0%; font-size: 18px; text-align: center;">事件及措施</h4></div>'
+            contentHTMLs += '<div id="box-center"><div id="things" style="float: left;">湖北省政策和举措</div></div>'
+            contentHTMLs += '<div id="box-bottom"><span id="rr1">2019/12/31</span><br><span id="rr2"></span><br><span id="rr3"></span><br></div> '
+
+            popup = new SuperMap.Popup.Framed(
+                "info-box2",
+                marker3.getLonLat(),
+                new SuperMap.Size(220, 170),
+                // '<div style="margin:5px 10px; padding:0;"><span id="r1"></span><br><span id="r2"></span><br><span id="r3"></span><br></div>',
+                contentHTMLs,
+                null,
+                true,
+                null
+            );
+            console.log(marker3.getLonLat())
+            infowin2 = popup
+            // console.log(infowin)
+            infowin2.setBackgroundColor('#FFFFFF');
+            // infowin.setOpacity(0.8);
+            // console.log(infowin)
+            //添加弹窗到map图层
+            map.addPopup(infowin2);
+
+
+            function closeInfoWin2() {
+                if (infowin2) {      //相当于判断Boolean(infowin)的值，如果为true执行下面语句，false跳过。js布尔值判断见https://blog.csdn.net/Night_zzz/article/details/100879893
+                    try {
+                        infowin2.hide();  //只是隐藏了弹窗
+                        infowin2.destroy();   //释放资源，删除了弹窗
+                    }
+                    catch (e) {
+                    }
+                }
+            }
+
+        }
+        function point4() {
+            // console.log(infowin)
+            //逻辑：设定infowin为初始值null, 先调用closeInfoWin()函数，后给infowin赋值，后调用addData函数向标注里面添加描述数据
+            closeInfoWin3();
+            //初始化popup类
+            contentHTMLs = '<div id="box-top"><h4 style="color: white; margin: 0; padding: 0%; font-size: 18px; text-align: center;">事件及措施</h4></div>'
+            contentHTMLs += '<div id="box-center"><div id="things" style="float: left;">国家政策和举措</div></div>'
+            contentHTMLs += '<div id="box-bottom"><span id="rr5">2019/12/31</span><br><span id="rr6">国家卫健委专家组抵达武汉检测核实情况</span><br><span id="rr7">影响力：59.6</span><br></div> '
+
+            popup = new SuperMap.Popup(
+                "info-box3",
+                marker4.getLonLat(),
+                new SuperMap.Size(220, 170),
+                // '<div style="margin:5px 10px; padding:0;"><span id="r1"></span><br><span id="r2"></span><br><span id="r3"></span><br></div>',
+                contentHTMLs,
+                // null,
+                true,
+                null
+            );
+            infowin3 = popup
+            // console.log(infowin)
+            // addData();
+            infowin3.setBackgroundColor('#FFFFFF');
+            // infowin.setOpacity(0.8);
+            // console.log(infowin)
+            //添加弹窗到map图层
+            map.addPopup(infowin3);
+
+
+            function closeInfoWin3() {
+                if (infowin3) {      //相当于判断Boolean(infowin)的值，如果为true执行下面语句，false跳过。js布尔值判断见https://blog.csdn.net/Night_zzz/article/details/100879893
+                    try {
+                        infowin3.hide();  //只是隐藏了弹窗/
+                        infowin3.destroy();   //释放资源，删除了弹窗
+                    }
+                    catch (e) {
+                    }
+                }
+            }
+
+        }
+        //定义addMarker函数
+        function addMarker() {
+
+            size = new SuperMap.Size(21, 26);
+            offset = new SuperMap.Pixel(-(size.w / 2), -size.h);
+            icon1 = new SuperMap.Icon('/img/markerbig_select.png', size, offset);
+            icon2 = new SuperMap.Icon('/img/marker-icon.png', size, offset)
+            icon3 = new SuperMap.Icon('/img/marker.png', size, offset)
+            icon4 = new SuperMap.Icon('/img/markerbig.png', size, offset)
+            // ico3 =new SuperMap.Icon()
+            var points = [[11471707.42, 4024447.76], [12722790.44, 3582552.61], [12513486.52, 3659962.76], [12953528.47, 4855279.98]]
+            // [11471707.42, 4024447.76]  //其他各省市
+            // [12722790.44, 3582552.61]  //武汉市
+            // [12513486.52, 3659962.76] //湖北省
+            // [12953528.47, 4855279.98] //国家
+            //初始化标记覆盖物类
+            marker1 = new SuperMap.Marker(new SuperMap.LonLat(points[0]), icon1);   //其他各省市
+            marker2 = new SuperMap.Marker(new SuperMap.LonLat(points[1]), icon2);   //武汉市
+            marker3 = new SuperMap.Marker(new SuperMap.LonLat(points[2]), icon3);   //湖北省
+            marker4 = new SuperMap.Marker(new SuperMap.LonLat(points[3]), icon4);   //国家
+
+            //添加覆盖物到标记图层
+            markers.addMarker(marker1);
+            markers.addMarker(marker2);
+            markers.addMarker(marker3);
+            markers.addMarker(marker4);
+
+            marker1.events.on({
+                "click": show,
+                "touchstart": show    //假如要在移动端的浏览器也实现点击弹框，则在注册touch类事件
+            });
+            marker2.events.on({
+                "click": show1,
+                "touchstart": show1  //假如要在移动端的浏览器也实现点击弹框，则在注册touch类事件
+            });
+            marker3.events.on({
+                "click": show2,
+                "touchstart": show2   //假如要在移动端的浏览器也实现点击弹框，则在注册touch类事件
+            });
+            marker4.events.on({
+                "click": show3,
+                "touchstart": show3    //假如要在移动端的浏览器也实现点击弹框，则在注册touch类事件
+            });
+        }
+
+        function show() {
+            var a = document.getElementById('info-box');
+            a.style.display = 'block'
+            // console.log(a.style.display
+        }
+        function show1() {
+            var b = document.getElementById('info-box1');
+            b.style.display = 'block'
+        }
+        function show2() {
+            var c = document.getElementById('info-box2');
+            c.style.display = 'block'
+            // console.log(a.style.display
+        }
+        function show3() {
+            var d = document.getElementById('info-box3');
+            d.style.display = 'block'
+            // console.log(a.style.display
+        }
+    </script>
+</body>
+<script src="/js/timer.js"></script>
+
+</html>

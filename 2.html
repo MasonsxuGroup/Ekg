@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>SuperMap</title>
+    <script type="text/javascript" include="bootstrap" src="/js/include-web.js"></script>
+    <script type="text/javascript" exclude="iclient-classic" src="/dist/classic/include-classic.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <!-- <script src="/js/infoClick.js"></script> -->
+    <link rel="stylesheet" href="/css/infobox.css">
+
+    <!-- <script src="/js/timeline.min.js"></script> -->
+    <link rel="shortcut icon" href="#" />
+    <!-- <link rel="stylesheet" href="/css/timer.css">   -->
+    <style type="text/css">
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #fff;
+            width: 100%;
+            height: 100%
+        }
+
+        ol {
+            width: 29px;
+            height: 29px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 100%;
+            margin: 10 20px;
+        }
+
+        #map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #toolbar {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            width: 300px;
+            text-align: center;
+            z-index: 100;
+            border-radius: 4px;
+        }
+
+        #map #r1,
+        #r5, #r6{
+            /* background: #3A424F; */
+            padding: 0;
+            color: black; 
+            margin-left: 2px;
+            /* margin-top: 6px; */
+            width: 200px;
+            display: inline-block;
+        }
+
+        .smPopupContent {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script type="text/javascript">
+        var map, baiduLayer, markers;
+        init()
+        function init() {
+            map = new SuperMap.Map("map", {
+                controls: [
+                    new SuperMap.Control.ScaleLine(),
+                    new SuperMap.Control.Zoom(),
+                    new SuperMap.Control.MousePosition(),
+                    new SuperMap.Control.LayerSwitcher(),
+                    new SuperMap.Control.Navigation({  //添加导航控件到map
+                        dragPanOptions: {
+                            enableKinetic: true    //拖拽动画
+                        }
+                    })]
+            });
+            //定义layerWorld图层，获取图层服务地址
+            layerWorld = new SuperMap.Layer.Baidu({
+                transparent: true,
+                cacheEnabled: true
+            }, { maxResolution: "auto", isBaseLayer: true },
+            );
+            //初始化标记图层类
+            markers = new SuperMap.Layer.Markers("Markers");
+
+            // layerWorld.events.on({ "layerInitialized": addMarker });
+
+            map.addLayers([layerWorld, markers]);
+            map.setCenter(new SuperMap.LonLat(12513486.52, 3659962.76), 4);
+            addMarker();
+            point1();
+            point2()
+        }
+
+
+        var infowin = null;
+        var infowin1 = null;
+        function point1() {
+            // console.log(infowin)
+            //逻辑：设定infowin为初始值null, 先调用closeInfoWin()函数，后给infowin赋值，后调用addData函数向标注里面添加描述数据
+            closeInfoWin();
+            // addData()
+            //初始化popup类
+            contentHTMLs = '<div id="box-top"><h4 style="color: white; margin: 0; padding: 0%; font-size: 18px; text-align: center;">事件及关键措施</h4></div>'
+            contentHTMLs += '<div id="box-center"><span id="things" style="float: left;">湖北省政策和举措</span></div>'
+            contentHTMLs += '<div id="box-bottom"><span id="r1">湖北省红十字会3名领导被问责</span><br><span id="r2">关键用户：头条新闻</span></div> '
+
+            popup = new SuperMap.Popup(
+                "info-box",
+                marker1.getLonLat(),
+                new SuperMap.Size(220, 120),
+                // '<div style="margin:5px 10px; padding:0;"><span id="r1"></span><br><span id="r2"></span><br><span id="r3"></span><br></div>',
+                contentHTMLs,
+                // null,
+                true,
+                null
+            );
+            infowin = popup
+            // console.log(infowin)
+            infowin.setBackgroundColor('#FFFFFF');
+            // infowin.setOpacity(0.8);
+            // console.log(infowin)
+            //添加弹窗到map图层
+            map.addPopup(infowin);
+
+
+            function closeInfoWin() {
+                if (infowin) {      //相当于判断Boolean(infowin)的值，如果为true执行下面语句，false跳过。js布尔值判断见https://blog.csdn.net/Night_zzz/article/details/100879893
+                    try {
+                        infowin.hide();  //只是隐藏了弹窗/
+                        infowin.destroy();   //释放资源，删除了弹窗
+                    }
+                    catch (e) {
+                    }
+                }
+            }
+        }
+
+        function point2() {
+            //逻辑：设定infowin为初始值null, 先调用closeInfoWin()函数，后给infowin赋值，后调用addData函数向标注里面添加描述数据
+            closeInfoWin1();
+            // addData()
+            //初始化popup类
+            contentHTMLs1 = '<div id="box-top"><h4 style="color: white; margin: 0; padding: 0%; font-size: 18px; text-align: center;">事件及措施</h4></div>'
+            contentHTMLs1 += '<div id="box-center"><div id="things1" style="float: left;">湖北省社会关注问题</div></div>'
+            contentHTMLs1 += '<div id="box-bottom"><span id="r5">湖北省红十字会物资使用情况引发质疑</span><br><span id="r6">关键用户：头条新闻</span></div>'
+            popup1 = new SuperMap.Popup(
+                "info-box1",
+                marker2.getLonLat(),
+                new SuperMap.Size(220, 120),
+                contentHTMLs1,
+                // null,
+                true,
+                null
+            );
+            infowin1 = popup1
+            // console.log(marker2.getLonLat().lon)
+            // addData1();
+            infowin1.setBackgroundColor('#FFFFFF');
+            // console.log(infowin1);
+            //添加弹窗到map图层
+            map.addPopup(infowin1);
+
+
+            function closeInfoWin1() {
+                if (infowin1) {      //相当于判断Boolean(infowin)的值，如果为true执行下面语句，false跳过。js布尔值判断见https://blog.csdn.net/Night_zzz/article/details/100879893
+                    try {
+                        infowin1.hide();  //只是隐藏了弹窗/
+                        infowin1.destroy();   //释放资源，删除了弹窗
+                    }
+                    catch (e) {
+                    }
+                }
+            }
+
+        }
+        function addMarker() {
+
+            size = new SuperMap.Size(21, 26);
+            size1 = new SuperMap.Size(30, 28);
+            offset = new SuperMap.Pixel(-(size.w / 2), -size.h + 2);
+            offset1 = new SuperMap.Pixel(-((size1.w / 2) + 3), -size1.h+5);
+            icon1 = new SuperMap.Icon('/img/markerbig_select.png', size1, offset1);
+            icon2 = new SuperMap.Icon('/img/marker-icon.png', size, offset);
+            var points = [[12513486.52, 3659962.76], [12207203.45854, 3456953.30256]];
+            //初始化标记覆盖物类
+            marker1 = new SuperMap.Marker(new SuperMap.LonLat(points[0]), icon1);   //湖北省政策与举措
+            marker2 = new SuperMap.Marker(new SuperMap.LonLat(points[1]), icon2);   //湖北省社会关注问题
+
+            //添加覆盖物到标记图层
+            markers.addMarker(marker1);
+            markers.addMarker(marker2);
+            marker1.events.on({
+                "click": show,
+                "touchstart": show    //假如要在移动端的浏览器也实现点击弹框，则在注册touch类事件
+            });
+            marker2.events.on({
+                "click": show1,
+                "touchstart": show1  //假如要在移动端的浏览器也实现点击弹框，则在注册touch类事件
+            });
+        }
+
+        function show() {
+            var a = document.getElementById('info-box');
+            a.style.display = 'block'
+            // console.log(a.style.display
+        }
+        function show1() {
+            var b = document.getElementById('info-box1');
+            b.style.display = 'block'
+        }
+    </script>
+</body>
+<!-- <script src="/js/timer.js"></script> -->
+
+</html>

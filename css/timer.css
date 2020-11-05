@@ -1,0 +1,78 @@
+/*时间轴样式*/
+.heatMapTimer {
+  position: absolute;
+  width: 50%;
+  height: 8%;
+  z-index: 10000;
+  text-align: center;
+  bottom: 40px;
+  left: 25%;
+  background-color: rgba(58, 66, 79, 0.4);
+  overflow: auto;
+}
+
+.time-item {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 5px 30px 0px 30px;
+  float: left;
+}
+
+.time-item,
+.time-btn {
+  display: block;
+  background: #fff;
+  cursor: pointer;
+  float: left;
+}
+
+.time-btn {
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  font-size: 23px;
+  background: #fff;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.time-date {
+  background-color: rgba(58, 66, 79, 0.4);
+  color: white;
+  position: relative;
+  top: 25px;
+  left: -23px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+/*播放样式*/
+.time-play:before {
+  display: block;
+  content: "";
+  border-top: 12px solid transparent;
+  border-left: 12px solid #595959;
+  border-bottom: 12px solid transparent;
+  width: 0;
+  height: 0;
+  text-align: center;
+  margin: 5px auto 0;
+}
+
+/*暂停的样式*/
+.time-pause:after {
+  content: "";
+  border-left: 8px solid #595959;
+  border-right: 8px solid #595959;
+  margin: 5px auto 0;
+  overflow: hidden;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+/*时间点选中样式*/
+.time-item.active {
+  background-color: #34b93d;
+}

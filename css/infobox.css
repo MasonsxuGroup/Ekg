@@ -1,0 +1,77 @@
+/* #box {
+    position: absolute;
+    overflow: visible;
+    left: 640px;
+    top: 190px;
+    width: 232px;
+    height: 160px;
+    border: 0px;
+    z-index: 1001;
+} */
+
+#info-box {
+  padding: 0 !important;
+  width: 200px;
+  height: 150px;
+  position: relative;
+  overflow: auto;
+  display: none;
+}
+
+#info-box1 {
+  padding: 0 !important;
+  width: 200px;
+  height: 150px;
+  position: relative;
+  overflow: auto;
+  display: none;
+}
+
+#info-box2 {
+  padding: 0 !important;
+  width: 200px;
+  height: 150px;
+  position: relative;
+  overflow: auto;
+  display: none;
+}
+
+#info-box3 {
+  padding: 0 !important;
+  width: 200px;
+  height: 150px;
+  position: relative;
+  overflow: auto;
+  display: block;
+}
+
+
+#box-top {
+  background-color: #666699;
+  height: 25px;
+}
+#box-center {
+  /* float: left; */
+  font-size: 15px;
+  font-weight: 200;
+
+  height: 20px;
+}
+#box-center #things {
+  /* border: 0 1px 0 0 solid #000; */
+  /* border-top: 0; */
+  /* width: 72px; */
+  padding: 0 5px;
+  border-right: 1px solid rgb(58, 66, 79);
+  background-color: #CCCCCC;
+}
+#box-bottom {
+  position: relative;
+  /* top: 45px; */
+  /* height: 115px; */
+  border: 1px solid rgb(58, 66, 79);
+}
+
+.customInfobox{
+  background-color: #fff;
+}

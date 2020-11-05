@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map2</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="/js/bingMap2.js"></script>
+    <script type='text/javascript'
+        src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&setLang=en-US&key=AnXtNHJg0FMDQi9Ehlgbaect2IIQfZEvvs05iLZJVA8I0hP3cc3w4uM-hLMOTjhW'
+        async defer></script>
+    <link rel="stylesheet" href="/css/bingMap.css">
+    <style type="text/css">
+        body {
+            color: black;
+            margin: 0;
+            overflow: hidden;
+            background: #fff;
+            width: 100%;
+            height: 100%
+        }
+
+        .bm_bottomLeftOverlay {
+            display: none !important;
+        }
+
+        .MicrosoftMap .bm_bottomRightOverlay .CopyrightContainer.quadrantOverride{
+            display: none;
+        }
+
+        .MicrosoftMap .NavBar_Container .NavBar_MapTypeButtonContainerWrapper{
+            display: none;
+        }
+        #r1,
+        #r2,
+        #r5,
+        #r6 {
+            /* background: #3A424F; */
+            padding: 0 0 0 5px;
+            color: black;
+            margin-left: 2px;
+            /* margin-top: 6px; */
+            /* width: 200px; */
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myMap" style="position:relative;width:100%;height:100%;"></div>
+</body>
+
+</html>
