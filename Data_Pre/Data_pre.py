@@ -13,15 +13,15 @@ def get_data(folderpath_origin):
             data = pd.read_excel(path)
             abstracts = data['摘要'].to_list()
             for abstract in abstracts:
-                abstract = str(abstract).replace('\u200b', '').replace(
-                    ' ', '').replace('\\', '').replace('#', '').replace('@', '').replace('/', '').replace('.', '')
+                abstract = str(abstract).replace(
+                    '\u200b', '').replace('\xa0', '').replace('\u3000', '').replace('\n', '').replace('\t', '')
                 all_data.append(abstract)
         elif path[-4:] == '.csv':
             data = pd.read_csv(path)
             detaileds = data['详细'].to_list()
             for detailed in detaileds:
                 detailed = str(detailed).replace('\u200b', '').replace(
-                    ' ', '').replace('\\', '').replace('#', '').replace('@', '').replace('/', '').replace('.', '')
+                    '\xa0', '').replace('\u3000', '').replace('\n', '').replace('\t', '')
                 all_data.append(detailed)
     return all_data
 
@@ -29,21 +29,17 @@ def get_data(folderpath_origin):
 def pre_data(data):
     Pre_Data = []
     for row_data in data:
-        new_row_data = ''
-        date_data = ''
-        for index in range(0, len(row_data)):
-            if (str(row_data[index]).isdigit() is False) or (index == len(row_data) - 1):
-                new_row_data = row_data[index] + ' O'
-                Pre_Data.append(new_row_data)
-            elif (str(row_data[index]).isdigit()) and (str(row_data[index + 1]).isdigit()):
-                date_data += str(row_data[index])
-            elif str(row_data[index]).isdigit() and (str(row_data[index + 1]).isdigit() is False):
-                date_data += str(row_data[index])
-                new_row_data = date_data + ' O'
-                Pre_Data.append(new_row_data)
-                date_data = ''
-        Pre_Data.append(' ')
-    return Pre_Data
+        new_row_data = str(row_data).split('#')
+        max_len_index = new_row_data.index(max(new_row_data, key=len))
+        new_data = new_row_data[max_len_index].strip().strip(
+            '】').strip('，').strip('：')
+        if len(new_data) > 15:
+            Pre_Data.append(new_data)
+    new_all_data = []
+    for data in Pre_Data:
+        if data not in new_all_data:
+            new_all_data.append(data)
+    return new_all_data
 
 
 def save_mean_data(data, amount, folderpath_dest):
@@ -52,17 +48,14 @@ def save_mean_data(data, amount, folderpath_dest):
     start = 0
     end = mean_data_length
     for index in range(0, amount):
-        while data[end - 1] != ' ':
-            end += 1
-        else:
-            sheet = pd.DataFrame(data[start:end - 1])
-            filename = folderpath_dest + 'Emergencies_Part_' + \
-                str(index) + '.txt'
-            sheet.to_csv(filename, index=None, header=None)
-            start = end
-            end += mean_data_length
-            if end > all_data_length:
-                end = all_data_length
+        sheet = pd.DataFrame(data[start:end - 1])
+        filename = folderpath_dest + 'Emergencies_Part_' + \
+            str(index) + '.txt'
+        sheet.to_csv(filename, index=None, header=None)
+        start = end
+        end += mean_data_length
+        if end > all_data_length:
+            end = all_data_length
 
 
 def save_all_data(data, folderpath_dest):
