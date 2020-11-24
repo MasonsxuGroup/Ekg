@@ -1,152 +1,109 @@
 <template>
   <div id="home">
-    <el-container style="height: 700px; border: 1px solid #eee">
-      <el-aside width="250px" style="background-color: rgb(238, 241, 246)">
-        <el-menu>
-          <el-submenu index="1">
-            <template slot="title"
-              ><i class="el-icon-s-unfold"></i>突发事件</template
+    <el-container style="height: 600px; border: 1px solid #eee">
+      <el-header>
+        <span>突发事件知识图谱</span>
+        <el-dropdown
+          style="float: right; font-size: 12px; right: 70px; height: 30px"
+        >
+          <i class="el-icon-setting" style="margin-right: 15px"></i>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item @click.native="jump('sign')"
+              >注销</el-dropdown-item
             >
-            <el-submenu index="1-1">
-              <template slot="title"
-                ><i class="el-icon-s-unfold"></i>公共卫生</template
-              >
-              <!-- <el-menu-item index="1-1-1">新冠肺炎</el-menu-item> -->
-              <el-submenu index="1-1-1">
-                <template slot="title"
-                  ><i class="el-icon-s-unfold"></i>甲类传染病</template
-                >
-                <!-- <el-menu-item index="1-1-1">新冠肺炎</el-menu-item> -->
-                <el-submenu index="1-1-1-1" :default-openeds="['1']">
-                  <template slot="title"
-                    ><i class="el-icon-menu"></i>新冠肺炎</template
-                  >
-                  <!-- <el-menu-item index="1-1-1">新冠肺炎</el-menu-item> -->
-                  <el-submenu
-                    v-for="(province, index) in provinces"
-                    :key="'P' + index"
-                    :index="'1-1-1-1' + (index + 1) + ''"
-                  >
-                    <template slot="title"
-                      ><i class="el-icon-location-outline"></i
-                      >{{ province }}</template
-                    >
-                    <template v-for="city in cities" v-if="city.n == province">
-                      <el-menu-item
-                        class="el-icon-place"
-                        v-for="(item, index2) in city.cities"
-                        :key="'C' + index2"
-                        :index="'1-1-1-1-' + index + '-' + index2 + ''"
-                        @click="clickMenuItem(item.n, $event)"
-                        >{{ item.n }}</el-menu-item
-                      >
-                    </template>
-                  </el-submenu>
-                </el-submenu>
-              </el-submenu>
-            </el-submenu>
-          </el-submenu>
-        </el-menu>
-      </el-aside>
-
+            <el-dropdown-item @click.native="jump('github')"
+              >关于我们</el-dropdown-item
+            >
+          </el-dropdown-menu>
+        </el-dropdown>
+        <span style="float: right; text-align: right">{{user}}</span>
+      </el-header>
       <el-container>
-        <el-header style="text-align: right; font-size: 12px">
-          <el-row>
-            <el-input
-              class="home-search"
-              style="float: left; width: 200px; border-radius: 5px 0 0 5px"
-              placeholder="请输入内容"
-              v-model="input"
-              clickMenuItem
+        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+          <el-menu router :default-openeds="['1']">
+            <el-submenu
+              v-for="(item, index) in $router.options.routes"
+              :key="index + 1"
+              :index="index + 1 + ''"
             >
-            {{input}}
-            </el-input>
-            <!-- <el-button style="float:left" type="primary">主要按钮</el-button> -->
-            <el-button id="home-btn" icon="el-icon-search" circle></el-button>
-          </el-row>
-        </el-header>
-
-        <el-main>
-          <!-- <router-view></router-view> -->
-          <Graph :text='input'></Graph>
-        </el-main>
+              <template slot="title"
+                ><i class="el-icon-menu"></i>{{ item.name }}</template
+              >
+              <el-menu-item
+                v-for="(item2, index2) in item.children"
+                :key="index2 + 1"
+                :index="item2.path"
+                :class="$route.path == item2.path ? 'is-active' : ''"
+              >
+                {{ item2.name }}
+              </el-menu-item>
+            </el-submenu>
+          </el-menu>
+        </el-aside>
+        <el-container>
+          <el-main>
+            <router-view></router-view>
+          </el-main>
+        </el-container>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script>
-import Graph from "../components/Graph";
 export default {
-  name: "home",
   data() {
     return {
-      input: "",
-      provinces: [],
-      cities: [],
+      user:'admin'
     };
   },
-  components: { Graph },
   methods: {
-    getNavData: function () {
-      const _this = this;
-      this.axios.get("../../static/data/cities.json").then(function (res) {
-        if (res.status == 200) {
-          // _this.cities = res.data;
-          let navData = res.data;
-          // let cityData = [];
-          let i;
-          let j;
-          for (i in navData) {
-            // _this.cities = navData[i]
-            // console.log(navData[i])
-            for (j in navData[i]) {
-              // console.log(navData[i][j])
-              let navDataItems = navData[i][j];
-              _this.provinces.push(navDataItems["n"]);
-              // console.log(navDataItems['cities'])
-              //hasOwnProperty()判断对象是否含有某属性（key值）
-              if (navDataItems.hasOwnProperty("cities")) {
-                _this.cities.push(navDataItems);
-              }
-            }
-          }
-        } else {
-          console.log("cities数据未读入！");
-        }
-      });
-    },
-    clickMenuItem: function(name,event){
-      this.input = name
+    // getRouter: function () {
+    //   var a = this.$router.options.routes;
+    //   console.log(a);
+    // },
+    jump: function (res) {
+      if (res == "sign") {
+        alert("已退出！！！");
+      } else if (res == "github") {
+        alert("项目地址");
+      }
     },
   },
   mounted() {
-    this.getNavData();
+    // this.getRouter();
+  },
+  watch: {
+    $route: {
+      handler: function (val, oldVal) {
+        console.log(val);
+      },
+      // 深度观察监听
+      deep: true,
+    },
   },
 };
 </script>
 
 <style scoped>
 .el-header {
-  background-color: #b3c0d1;
-  color: #333;
+  background-color: rgba(36, 55, 67, 1);
+  color: rgba(40, 183, 141, 1);
+  text-align: left;
   line-height: 60px;
 }
 
 .el-aside {
+  background-color: rgba(138, 148, 155, 1);
   color: #333;
+  text-align: center;
+  line-height: 200px;
 }
-.el-input {
-  display: block;
-}
-/*if you want to cover the style of elementUI's componets, you'd better add a classname wo your tags.
-then modify the style like this*/
-.home-search >>> .el-input__inner {
-  border-radius: 5px 0px 0px 5px;
-}
-#home-btn {
-  float: left;
-  margin: 11px 0 3px 0px !important;
-  border-radius: 0 50% 50% 0;
+
+.el-main {
+  background-color: rgba(250, 250, 250, 1);
+  color: #333;
+  text-align: center;
+  line-height: 160px;
 }
 </style>
