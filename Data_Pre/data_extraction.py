@@ -1,9 +1,12 @@
 import pandas as pd
+from tqdm.std import trange
 
 
 def merge_data(all_data):
     Merged_Data_List = []  # 存放所有实体字典
-    for data in all_data['data']:
+    print('开始合并所有邻近标记的实体：')
+    for data_index in trange(len(all_data['data'])):
+        data = all_data['data'][data_index]
         item = ''
         data_length = len(data)
         Merged_Data_Dict = {}  # 存放合并后的所有实体对
@@ -44,7 +47,9 @@ def merge_data(all_data):
 
 def marker_data(all_data):
     extract_data_lists = []
-    for item in all_data['data']:
+    print('转换标记，并拆分字符串：')
+    for item_index in trange(len(all_data['data'])):
+        item = all_data['data'][item_index]
         for cell in item:
             if cell['marker'] == 'O':
                 extract_data_list = []
@@ -75,19 +80,40 @@ def marker_data(all_data):
                         extract_data_lists.append(extract_data_list)
                 extract_data_lists[marker_len][1] = 'B' + \
                     extract_data_lists[marker_len][1][1:]
+        extract_data_lists.append('')
     return extract_data_lists
 
 
-def save_marker_data(all_extract_data):
+def save_marker_data(all_extract_data, folderpath_dest):
     sheet = pd.DataFrame(all_extract_data)
-    sheet.to_csv('./Data_Pre/config/all_extract_data.csv',
-                 index=None, header=None)
+    filename = folderpath_dest + 'all_extract_data.txt'
+    sheet.to_csv(filename, index=None, header=None)
 
 
 def save_merged_data(all_pre_data, folderpath_dest):
     sheet = pd.DataFrame(all_pre_data)
     filename = folderpath_dest + 'Emergencies_Merged_Data.json'
     sheet.to_json(filename, force_ascii=False)
+
+
+def save_mean_data(data, amount, folderpath_dest):
+    all_data_length = len(data)
+    mean_data_length = all_data_length//amount
+    start = 0
+    end = mean_data_length
+    print('开始平均所有数据')
+    for index in trange(amount):
+        while len(data[end - 1]) != 0:
+            end += 1
+        else:
+            sheet = pd.DataFrame(data[start:end - 1])
+            filename = folderpath_dest + 'all_extract_part_' + \
+                str(index) + '.txt'
+            sheet.to_csv(filename, index=None, header=None)
+            start = end
+            end += mean_data_length
+            if end > all_data_length:
+                end = all_data_length
 
 
 def run(folderpath_dest):
@@ -98,9 +124,10 @@ def run(folderpath_dest):
     data = pd.read_json(
         './Data_Pre/Emergencies_Data_Pre/Emergencies_Merged_Data.json')
     extract_data_lists = marker_data(data)
-    save_marker_data(extract_data_lists)
+    save_marker_data(extract_data_lists, folderpath_dest)
+    save_mean_data(extract_data_lists, 5, folderpath_dest)
 
 
 if __name__ == "__main__":
-    Emergencies_Data_Path = 'Data_Pre/Emergencies_Data_Pre/'
+    Emergencies_Data_Path = 'Data_Pre/Extract_Data_Pre/'
     run(Emergencies_Data_Path)
