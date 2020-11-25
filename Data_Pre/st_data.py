@@ -51,9 +51,7 @@ def fetch_token():
         exit()
 
 
-def make_request(comment_list):
-    token = fetch_token()
-    url = COMMENT_TAG_URL + "?charset=UTF-8&access_token=" + token
+def make_request(url, comment_list):
     new_data = {}  # 存放当前数据中实体的提取结果
     res_data_list = []  # 存放数据中的所有 res 实体
     res_data_dict = {}  # 存放数据中的单个 res 实体
@@ -120,13 +118,13 @@ def get_data(folderpath_origin):
     return all_data
 
 
-def tq_data(all_data):
+def tq_data(url, all_data):
     all_data_length = len(all_data)
     all_pre_data = []
     for index in trange(all_data_length):
         now_data = all_data[index]
         now_data_list = list(filter(None, now_data.split('。')))
-        pre_data = make_request(now_data_list)
+        pre_data = make_request(url, now_data_list)
         all_pre_data.append(pre_data)
     return all_pre_data
 
@@ -138,10 +136,12 @@ def save_all_data(all_pre_data, folderpath_dest):
 
 
 def run(folderpath_origin, folderpath_dest):
+    token = fetch_token()
+    url = COMMENT_TAG_URL + "?charset=UTF-8&access_token=" + token
     all_data = get_data(folderpath_origin)
     print('数据加载完毕')
-    all_pre_data = tq_data(all_data)
-    print(all_pre_data)
+    all_pre_data = tq_data(url, all_data)
+    # print(all_pre_data)
     print('已成功提取所有实体')
     save_all_data(all_pre_data, folderpath_dest)
     print('提取的所有数据已保存为 json 文件')
