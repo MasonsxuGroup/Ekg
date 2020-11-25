@@ -20,11 +20,12 @@
       </el-header>
       <el-container>
         <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-          <el-menu router :default-openeds="['1']">
+          <el-menu router :default-openeds="['3']">
             <el-submenu
               v-for="(item, index) in $router.options.routes"
               :key="index + 1"
               :index="index + 1 + ''"
+              v-if="item.show"
             >
               <template slot="title"
                 ><i class="el-icon-menu"></i>{{ item.name }}</template
@@ -64,9 +65,10 @@ export default {
     // },
     jump: function (res) {
       if (res == "sign") {
-        alert("已退出！！！");
+        this.$router.push('/login')
       } else if (res == "github") {
-        alert("项目地址");
+        alert("项目地址，欢迎star！");
+        window.open('https://github.com/MasonsxuGroup/Ekg')
       }
     },
   },
