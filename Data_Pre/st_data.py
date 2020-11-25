@@ -115,7 +115,13 @@ def get_data(folderpath_origin):
             for detailed in detaileds:
                 detailed = str(detailed).translate(trans).replace('\u200b', '')
                 all_data.append(detailed)
-    return all_data
+    new_all_data = []
+    print('开始去重处理！！！')
+    for data_index in trange(len(all_data)):
+        data = all_data[data_index]
+        if data not in new_all_data:
+            new_all_data.append(data)
+    return new_all_data
 
 
 def tq_data(url, all_data):
@@ -141,7 +147,6 @@ def run(folderpath_origin, folderpath_dest):
     all_data = get_data(folderpath_origin)
     print('数据加载完毕')
     all_pre_data = tq_data(url, all_data)
-    # print(all_pre_data)
     print('已成功提取所有实体')
     save_all_data(all_pre_data, folderpath_dest)
     print('提取的所有数据已保存为 json 文件')
