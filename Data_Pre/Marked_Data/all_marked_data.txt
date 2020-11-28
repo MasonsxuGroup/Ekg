@@ -136334,16 +136334,12 @@ c O
 _ O
 新 O
 闻 O
-_ 
+_ O
 央 B-ORG
 视 I-ORG
 网 I-ORG
 ( O
 CCTV B-ORG
-. O
-c O
-o O
-m O
 ) O
 美 B-LOC
 国 I-LOC
@@ -136382,16 +136378,12 @@ m O
 _ O
 新 O
 闻 O
-_ 
+_ O
 央 B-ORG
 视 I-ORG
 网 I-ORG
 ( O
 CCTV B-ORG
-. O
-c O
-o O
-m O
 ) O
 10 B-TIME
 月 I-TIME
@@ -136442,10 +136434,6 @@ _ O
 网 I-ORG
 ( O
 CCTV B-ORG
-. O
-c O
-o O
-m O
 ) O
 美 B-LOC
 国 I-LOC
