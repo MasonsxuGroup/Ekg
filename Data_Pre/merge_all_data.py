@@ -9,7 +9,7 @@ def get_data(folderpath_origin):
     print('开始合并所有文件中的数据')
     for name_index in trange(len(filename)):
         name = filename[name_index]
-        if len(name) == 13:
+        if str(name)[-5:] == 'w.txt':
             path = folderpath_origin + name
             with open(path, 'r') as f:
                 for chunk in f:
