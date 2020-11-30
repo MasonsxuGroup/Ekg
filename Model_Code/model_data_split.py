@@ -22,7 +22,10 @@ def merge_all_data(folderpath_origin, folderpath_dest):
             elif data[1] == 'O':
                 data_str = data[0] + '/O '
                 f.write(data_str)
-            elif data[1][2:] == all_data[data_index + 1][1][2:]:
+            elif (all_data[data_index + 1][1][0] == 'B') and (data[1][2:] == all_data[data_index + 1][1][2:]):
+                data_str = data[0] + '/' + data[1][2:] + ' '
+                f.write(data_str)
+            elif (all_data[data_index + 1][1][0] != 'B') and (data[1][2:] == all_data[data_index + 1][1][2:]):
                 data_str = data[0]
                 f.write(data_str)
             elif data[1][2:] != all_data[data_index + 1][1][2:]:
