@@ -26,7 +26,7 @@ export default {
   name: "graph",
   data() {
     return {
-      inputEntity: "",
+      inputEntity: "默认",
     };
   },
   components: { EchartsGraph },
