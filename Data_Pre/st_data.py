@@ -123,7 +123,7 @@ def get_data(folderpath_origin):
 
 
 def tq_data(url, all_data):
-    all_data_length = len(all_data[:10])
+    all_data_length = len(all_data)
     all_pre_data = []
     for index in trange(all_data_length):
         now_data = all_data[index]
