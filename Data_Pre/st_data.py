@@ -97,7 +97,7 @@ def request(url, data):
 def get_data(folderpath_origin):
     filename = os.listdir(folderpath_origin)
     all_data = []
-    punc = '# '
+    punc = '　# '
     trans = str.maketrans({key: None for key in punc})
     for name in filename:
         path = folderpath_origin + name
