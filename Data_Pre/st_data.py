@@ -1,5 +1,3 @@
-# coding=utf-8
-
 import os
 import ssl
 import json
@@ -68,13 +66,13 @@ def make_request(url, comment_list):
                     res_data_dict['item'] = item['item']
                     res_data_list.append(res_data_dict)
                     res_data_dict = {}
-                elif item['pos'] == 'w' or item['pos'] == 'nz':
-                    res_data_dict['marker'] = 'O'
+                elif item['pos'] == 'v' or item['pos'] == 'vn' or item['pos'] == 'n' or item['pos'] == 'm':
+                    res_data_dict['marker'] = 'RES'
                     res_data_dict['item'] = item['item']
                     res_data_list.append(res_data_dict)
                     res_data_dict = {}
                 else:
-                    res_data_dict['marker'] = 'RES'
+                    res_data_dict['marker'] = 'O'
                     res_data_dict['item'] = item['item']
                     res_data_list.append(res_data_dict)
                     res_data_dict = {}
@@ -99,7 +97,7 @@ def request(url, data):
 def get_data(folderpath_origin):
     filename = os.listdir(folderpath_origin)
     all_data = []
-    punc = ' '
+    punc = '# '
     trans = str.maketrans({key: None for key in punc})
     for name in filename:
         path = folderpath_origin + name
@@ -125,7 +123,7 @@ def get_data(folderpath_origin):
 
 
 def tq_data(url, all_data):
-    all_data_length = len(all_data)
+    all_data_length = len(all_data[:10])
     all_pre_data = []
     for index in trange(all_data_length):
         now_data = all_data[index]
@@ -154,5 +152,6 @@ def run(folderpath_origin, folderpath_dest):
 
 if __name__ == '__main__':
     News_Data_Origin_Path = 'Data_Pre/News_Data_Origin/'
-    Emergencies_Data_Path = 'Data_Pre/Emergencies_Data_Pre/'
+    # Emergencies_Data_Path = 'Data_Pre/Emergencies_Data_Pre/'
+    Emergencies_Data_Path = 'Data_Pre/test/'
     run(News_Data_Origin_Path, Emergencies_Data_Path)
