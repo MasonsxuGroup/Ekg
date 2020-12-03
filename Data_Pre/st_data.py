@@ -152,6 +152,5 @@ def run(folderpath_origin, folderpath_dest):
 
 if __name__ == '__main__':
     News_Data_Origin_Path = 'Data_Pre/News_Data_Origin/'
-    # Emergencies_Data_Path = 'Data_Pre/Emergencies_Data_Pre/'
-    Emergencies_Data_Path = 'Data_Pre/test/'
+    Emergencies_Data_Path = 'Data_Pre/Emergencies_Data_Pre/'
     run(News_Data_Origin_Path, Emergencies_Data_Path)
