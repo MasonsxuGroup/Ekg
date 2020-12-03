@@ -12,7 +12,7 @@ def merge_data(all_data):
         Merged_Data_Dict = {}  # 存放合并后的所有实体对
         merged_data_list = []  # 存放合并后的实体字典
         merged_data_dict = {}  # 存放合并后的实体对象
-        for index in range(0, data_length):
+        for index in range(data_length):
             if index == data_length - 1:
                 if item == '':
                     merged_data_dict['item'] = data[index]['item']
@@ -26,6 +26,11 @@ def merge_data(all_data):
                     merged_data_list.append(merged_data_dict)
                     merged_data_dict = {}
                     item = ''
+            elif data[index]['marker'] == 'O':
+                merged_data_dict['item'] = data[index]['item']
+                merged_data_dict['marker'] = data[index]['marker']
+                merged_data_list.append(merged_data_dict)
+                merged_data_dict = {}
             elif data[index]['marker'] != data[index + 1]['marker'] and item == '':
                 merged_data_dict['item'] = data[index]['item']
                 merged_data_dict['marker'] = data[index]['marker']
@@ -121,8 +126,8 @@ def run(folderpath_dest):
         './Data_Pre/Emergencies_Data_Pre/Emergencies_All_Data.json')
     merged_data_list = merge_data(data)
     save_merged_data(merged_data_list, folderpath_dest)
-    data = pd.read_json(
-        './Data_Pre/Emergencies_Data_Pre/Emergencies_Merged_Data.json')
+    filename = folderpath_dest + 'Emergencies_Merged_Data.json'
+    data = pd.read_json(filename)
     extract_data_lists = marker_data(data)
     save_marker_data(extract_data_lists, folderpath_dest)
     save_mean_data(extract_data_lists, 5, folderpath_dest)
