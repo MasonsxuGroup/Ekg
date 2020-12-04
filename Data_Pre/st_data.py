@@ -97,8 +97,8 @@ def request(url, data):
 def get_data(folderpath_origin):
     filename = os.listdir(folderpath_origin)
     all_data = []
-    punc = '　# '
-    trans = str.maketrans({key: None for key in punc})
+    punc = '　# '  # 需要删除的特殊字符
+    trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
     for name in filename:
         path = folderpath_origin + name
         if path[-5:] == '.xlsx':
