@@ -72,12 +72,15 @@ def save_data_dict(folderpath_dest):
     filename_origin = folderpath_dest + 'all_marked_data.txt'
     data = pd.read_csv(filename_origin, header=None)
     data = data.values.tolist()
-    data_dict = []
+    marked_data_dict = []  # 存放标记数据的检索词
+    data_dict = []  # 存放标记数据的完整数据
     for data_index in trange(len(data)):
         now_data = data[data_index][0]
         data_list = now_data.split(' ')
         for cell in data_list:
-            if cell not in data_dict:
+            cell_marked = str(cell).split('/')[0]
+            if cell_marked not in marked_data_dict:
+                marked_data_dict.append(cell_marked)
                 data_dict.append(cell)
     sheet = pd.DataFrame(data_dict)
     filename_dest = folderpath_dest + 'dict.txt'
