@@ -6,10 +6,14 @@ def load_customization(text):
     my_lac = LAC(model_path='Model_Code/model/')
     my_lac.load_customization('Model_Code/data/dict.txt', sep=None)
     result_list = my_lac.run(text)
-    result_dict = {}
+    result_data_dict = {}
+    result_data_dict['data'] = []
     for index in range(len(result_list[0])):
+        result_dict = {}
         result_dict[result_list[0][index]] = result_list[1][index]
-    return result_dict
+        result_data_dict['data'].append(result_dict)
+    # print(result_data_dict)
+    return result_data_dict
 
 
 # if __name__ == '__main__':
