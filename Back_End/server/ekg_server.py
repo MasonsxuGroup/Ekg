@@ -8,10 +8,10 @@ def student():
     return render_template('student.html')
 
 
-@app.route('/result', methods=['POST', 'GET'])
+@app.route('/extract', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
-        result = request.form
+        result = request.get_json()
         result_dict = extract.load_customization(result['content'])
         return result_dict
 
