@@ -52,7 +52,8 @@ def split_data(folderpath_dest, shuffle=False, ratio=0.2):
         :ratio (float):划分比例
 
     Returns:
-        sublist_1 sublist_2
+        :sublist_1 (list): list of split，划分的测试数据集
+        :sublist_2 (list): list of split，划分的训练数据集
     """
     filename_dest = folderpath_dest + 'all_marked_data.txt'
     data = pd.read_csv(filename_dest, header=None)

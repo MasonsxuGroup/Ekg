@@ -59,11 +59,11 @@ def make_request(url, comment_list):
     """ 访问文本数据处理API
 
     Args:
-        :url:    请求的地址
-        :comment_list:   待处理的数据
+        :url (str):    请求的地址
+        :comment_list (list):   待处理的数据
 
     Returns:
-        :new_data:   已经处理好的数据列表
+        :new_data (list):   已经处理好的数据列表
     """
 
     new_data = {}  # 存放当前数据中实体的提取结果
