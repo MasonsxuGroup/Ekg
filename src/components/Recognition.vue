@@ -14,12 +14,14 @@
               v-model="ruleForm.content"
               rows="4"
               style="border-style: ridge"
+              maxlength="150"
+              show-word-limit
             ></el-input>
             <el-form-item style="margin-top: 10px">
               <el-button type="primary" @click="submitForm('ruleForm')"
                 >提交</el-button
               >
-              <el-button @click="resetForm('ruleForm')">重置</el-button>
+              <el-button @click="resetForm">重置</el-button>
             </el-form-item>
           </el-form-item>
         </div>
@@ -27,16 +29,45 @@
     </el-row>
     <el-row id="bottom-row">
       <p id="btm-form-label">识别结果</p>
-      <div style="padding: 0 15px">
-        <el-input
-          type="textarea"
-          rows="4"
-          placeholder="请输入内容"
-          :value="entity"
-          readonly
-          style="bottom: 65px; border-style: groove"
+      <div
+        style="
+          padding: 0 15px;
+          border-style: grrove;
+          height: 160px;
+          display: flex;
+          flex-wrap: wrap;
+        "
+      >
+        <div
+          id="output-result"
+          v-for="(entity, index) in entities"
+          @mouseover="onMouseOver(index)"
+          @mouseleave="onMouseLeave"
+          :class="{ activeClass: index === isActive }"
+          :title="resp_values[index]"
         >
-        </el-input>
+          <!-- <span id="promptBox" v-if="seen">{{resp_values[index]}}</span> -->
+          <p
+            style="
+              margin: 0;
+              line-height: 30px;
+              font-weight: 580;
+              padding: 0 16px;
+            "
+          >
+            {{ entity }}
+          </p>
+          <p
+            style="
+              margin: 0;
+              line-height: 20px;
+              font-size: 12px;
+              padding: 0 16px;
+            "
+          >
+            {{ resp_values[index] }}
+          </p>
+        </div>
       </div>
     </el-row>
   </div>
@@ -46,11 +77,15 @@
 export default {
   data() {
     return {
+      isActive: "",
+      seen: false,
       ruleForm: {
-        content: "",
+        content:
+          "青岛新增3例新冠无症状感染者，北京10月10日无新增报告新冠肺炎确诊病例10月10日0时至24时，无新增报告本地确诊病例、疑似病例和无症状感染者；无新增报告境外输入确诊病例、疑似病例和无症状感染者。",
       },
       rules: {
         content: [
+          { required: true, message: "输入内容不能为空！", trigger: "blur" },
           {
             min: 0,
             max: 150,
@@ -59,7 +94,9 @@ export default {
           },
         ],
       },
-      entity: "测试",
+      entities: [],
+      resp_values: [],
+      result: "",
     };
   },
   methods: {
@@ -67,46 +104,48 @@ export default {
       const _this = this;
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          //   alert("submit!");
           this.axios
-            .post(
-              "http://rap2api.taobao.org/app/mock/271582/model/input",
-              this.resetForm
-            )
+            .post("/api/extract", this.ruleForm)
             .then(function (res) {
-                if(res.status == 200){
-                    alert("提交成功！！！")
+              let resp = res.data.data;
+              let temp = [];
+              let value_temp = [];
+              if (res.status == 200) {
+                // console.log(resp)
+                for (let i in resp) {
+                  // console.log(resp[i])
+                  temp.push(String(Object.keys(resp[i])));
+                  _this.entities = temp;
+                  value_temp.push(String(Object.values(resp[i])));
+                  // console.log(value_temp)
+                  _this.resp_values = value_temp;
                 }
-            });
+                console.log(value_temp);
+              }
+            })
+            .catch((error) => console.log(error));
         } else {
           console.log("error submit!!");
           return false;
         }
       });
     },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+    resetForm: function () {
+      // console.log(1)
+      this.ruleForm.content = "";
+      // this.$refs[formName].resetFields();
     },
-    getEnrity: function(){
-        const _this = this;
-        this.axios.get('http://rap2api.taobao.org/app/mock/271582/model/output').then(function(res){
-            // console.log(res)
-            let resp = res.data.entities
-            let entityStr = ''
-            for(let i in resp){
-                for(let k in resp[i]){
-                    entityStr += resp[i][k] + ' '
-                }
-            }
-            // console.log(entityStr)
-            _this.entity = entityStr
-            // console.log(typeof(resp))
-        })
+    onMouseOver: function (index) {
+      this.isActive = index;
+      this.seen = true;
+    },
+    onMouseLeave: function () {
+      this.isActive = "";
+      this.seen = false;
     },
   },
-  created(){
-      this.getEnrity()
-  }
+  created() {},
+  mounted() {},
 };
 </script>
 
@@ -138,5 +177,24 @@ export default {
   padding: 0 15px;
   font-weight: 600;
   margin: 10px 0;
+}
+
+#output-result {
+  // display: inline-block;
+  border: 1px solid #e0e0e0;
+  border-radius: 4%;
+  background-color: white;
+  // float: left;
+  font-size: 15px;
+  margin: 5px;
+  height: 48px;
+  // line-height: 38px;
+}
+.activeClass {
+  background-color: #409eff !important;
+}
+#outpu-result p {
+  line-height: 20;
+  position: relative;
 }
 </style>
