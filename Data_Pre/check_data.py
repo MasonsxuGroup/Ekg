@@ -5,9 +5,14 @@ from tqdm.std import trange
 
 
 def check_data(folderpath_origin, folderpath_dest):
+    """处理因人工标注造成的字符合并问题（单个文件）
+
+    Args:
+        : folderpath_origin(str): Folder，待处理文件路径
+        : folderpath_dest(str): Folder，已处理数据保存路径
+    """
 
     all_data = pd.read_csv(folderpath_origin, header=None)
-
     all_data = all_data.values.tolist()
     new_all_data_list = []
     for data_index in trange(len(all_data)):
@@ -27,6 +32,13 @@ def check_data(folderpath_origin, folderpath_dest):
 
 
 def check_datas(folderpath_origin, folderpath_dest):
+    """处理因人工标注造成的字符合并问题（多个文件处于同一目录下）
+
+    Args:
+        : folderpath_origin(str): Folder，待处理文件目录路径
+        : folderpath_dest(str): Folder，已处理数据保存目录路径
+    """
+
     filenames = os.listdir(folderpath_origin)
 
     for filename in filenames:
