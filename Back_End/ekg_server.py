@@ -19,6 +19,13 @@ def extract():
         return jsonify(result_dict)
 
 
+@app.route('/api/figure', methods=['GET', 'POST'])
+def figure():
+    if request.method == 'GET':
+        figure_data_dict = extraction.ExtractData.load_figure_data()
+        return jsonify(figure_data_dict)
+
+
 @app.errorhandler(Exception)
 def handle_exception_error(e):
     return render_template('index.html')
