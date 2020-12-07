@@ -146,8 +146,7 @@ def run(folderpath_origin, folderpath_dest,
     sublist_1, sublist_2 = split_data(folderpath_dest, shuffle=True, ratio=0.2)
     save_split_data(sublist_1, sublist_2, folderpath_dest)
     save_data_dict(folderpath_dest)
-    train_model(folderpath_origin, folderpath_dest,
-                model_path, train_file_path, test_file_path)
+    train_model(model_path, train_file_path, test_file_path)
 
 
 if __name__ == "__main__":
