@@ -74,11 +74,12 @@
 </template>
 
 <script>
+// import bus from '../../static/js/eventBus'
 export default {
   data() {
     return {
       isActive: "",
-      seen: false,
+      // seen: false,
       ruleForm: {
         content:
           "青岛新增3例新冠无症状感染者，北京10月10日无新增报告新冠肺炎确诊病例10月10日0时至24时，无新增报告本地确诊病例、疑似病例和无症状感染者；无新增报告境外输入确诊病例、疑似病例和无症状感染者。",
@@ -111,16 +112,12 @@ export default {
               let temp = [];
               let value_temp = [];
               if (res.status == 200) {
-                // console.log(resp)
                 for (let i in resp) {
-                  // console.log(resp[i])
-                  temp.push(String(Object.keys(resp[i])));
+                  temp.push(String(resp[i]['item']));
                   _this.entities = temp;
-                  value_temp.push(String(Object.values(resp[i])));
-                  // console.log(value_temp)
+                  value_temp.push(String(resp[i]['pos']));
                   _this.resp_values = value_temp;
                 }
-                console.log(value_temp);
               }
             })
             .catch((error) => console.log(error));
@@ -131,17 +128,13 @@ export default {
       });
     },
     resetForm: function () {
-      // console.log(1)
       this.ruleForm.content = "";
-      // this.$refs[formName].resetFields();
     },
     onMouseOver: function (index) {
       this.isActive = index;
-      this.seen = true;
     },
     onMouseLeave: function () {
       this.isActive = "";
-      this.seen = false;
     },
   },
   created() {},
@@ -166,7 +159,7 @@ export default {
 }
 
 #bottom-row {
-  height: 200px;
+  height: 250px;
   border: 1px solid rgba(138, 148, 155, 0.2);
 }
 #mid-form-label,
