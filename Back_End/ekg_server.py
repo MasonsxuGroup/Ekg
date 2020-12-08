@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from gevent.pywsgi import WSGIServer
 from goods import extraction
 
 app = Flask(__name__)
@@ -26,10 +27,12 @@ def figure():
         return jsonify(figure_data_dict)
 
 
-@app.errorhandler(Exception)
-def handle_exception_error(e):
-    return render_template('index.html')
+# @app.errorhandler(Exception)
+# def handle_exception_error(e):
+#     return render_template('index.html')
 
 
 if __name__ == "__main__":
-    app.run(port=8080)
+    # app.run(port=8080)
+    http_server = WSGIServer(('0.0.0.0', 5000), app)
+    http_server.serve_forever()
