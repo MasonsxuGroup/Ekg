@@ -3,7 +3,6 @@ import Router from "vue-router";
 import Home from "../components/Home.vue";
 import EchartsGraph from "../components/EchartsGraph.vue";
 import Recognition from "../components/Recognition.vue";
-import Login from "../components/Login.vue";
 
 Vue.use(Router);
 
@@ -12,14 +11,8 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "跟路由",
-      redirect: "/login",
-      show: false
-    },
-    {
-      path: "/login",
-      name: "用户登录",
-      component: Login,
+      name: "根路由",
+      redirect: "/home",
       show: false
     },
     {

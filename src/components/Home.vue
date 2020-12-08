@@ -4,23 +4,20 @@
       <el-header>
         <span>突发事件知识图谱</span>
         <el-dropdown
-          style="float: right; font-size: 12px; right: 70px; height: 30px"
+          style="float: right; font-size: 12px; right: 145px; height: 30px"
         >
           <i class="el-icon-setting" style="margin-right: 15px"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item @click.native="jump('sign')"
-              >注销</el-dropdown-item
-            >
             <el-dropdown-item @click.native="jump('github')"
               >关于我们</el-dropdown-item
             >
           </el-dropdown-menu>
         </el-dropdown>
-        <span style="float: right; text-align: right">{{user}}</span>
+        <span style="float: right; text-align: right">{{ user }}</span>
       </el-header>
       <el-container>
         <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-          <el-menu router :default-openeds="['3']">
+          <el-menu router :default-openeds="['2']">
             <el-submenu
               v-for="(item, index) in $router.options.routes"
               :key="index + 1"
@@ -55,7 +52,7 @@
 export default {
   data() {
     return {
-      user:'admin'
+      user: "MasonsxuGroup",
     };
   },
   methods: {
@@ -64,11 +61,9 @@ export default {
     //   console.log(a);
     // },
     jump: function (res) {
-      if (res == "sign") {
-        this.$router.push('/login')
-      } else if (res == "github") {
+      if (res == "github") {
         alert("项目地址，欢迎star！");
-        window.open('https://github.com/MasonsxuGroup/Ekg')
+        window.open("https://github.com/MasonsxuGroup/Ekg");
       }
     },
   },
