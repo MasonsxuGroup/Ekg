@@ -4,18 +4,18 @@
   </div>
 </template>
 
-<script>    
+<script>
 export default {
-  name:'login',
-  data(){
-    return{}
+  name: "login",
+  data() {
+    return {};
   },
-  methods:{
-    pageHome:function(){
+  methods: {
+    pageHome: function () {
       // console.log(this.$router)
-      this.$router.push('/home')
-    }
-  }
+      this.$router.push("/home");
+    },
+  },
 };
 </script>
 

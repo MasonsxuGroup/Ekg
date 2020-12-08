@@ -1,18 +1,15 @@
 <template>
   <div id="graph-chart">
-    <!-- {{ graph_data.node }}
-    {{ graph_data.links }} -->
-    <div id="main-chart" style="width: 100%; height: 100%"></div>
+    <div id="main-chart" style="width: 100%; height: 500px"></div>
   </div>
 </template>
 
 <script>
-// import bus from '../../static/js/eventBus'
 import echarts from "echarts";
 
 export default {
   name: "graph-echart",
-  props: ["text"],
+  // props: ["text"],
   data() {
     return {
       graph_data: {},
@@ -29,21 +26,32 @@ export default {
         .get("api/figure")
         .then((res) => {
           let resp = res.data.data;
+          console.log(res);
           _this.graph_data["node"] = [];
           _this.graph_data["links"] = [];
+          // let num = 0;
           for (let i in resp) {
             let source = "";
             let node_dict = {};
             let links_dict = {};
-            source = resp[i]["LOC"];
-            node_dict["id"] = Number(i);
-            node_dict["name"] = resp[i]["LOC"];
-            node_dict["category"] = 0; //0=>LOC
-            _this.graph_data["node"].push(node_dict);
+            if (resp[i]["LOC"].length != 0) {
+              source = resp[i]["LOC"];
+              // node_dict["id"] = String(num);
+              node_dict["name"] = resp[i]["LOC"];
+              node_dict["category"] = 0; //0=>LOC
+              _this.graph_data["node"].push(node_dict);
+            } else {
+              source = "全国";
+              // node_dict["id"] = String(num);
+              node_dict["name"] = "全国";
+              node_dict["category"] = 0; //0=>LOC
+              _this.graph_data["node"].push(node_dict);
+            }
+            // num += 1;
             for (let k in resp[i]["TIME"]) {
               let node_dict = {};
               let links_dict = {};
-              node_dict["id"] = Number(k);
+              // node_dict["id"] = String(num);
               node_dict["name"] = resp[i]["TIME"][k];
               node_dict["category"] = 1; //1=>TIME
               links_dict["source"] = source;
@@ -51,11 +59,12 @@ export default {
               links_dict["name"] = "时间";
               _this.graph_data["node"].push(node_dict);
               _this.graph_data["links"].push(links_dict);
+              // num += 1;
             }
             for (let j in resp[i]["RES"]) {
               let node_dict = {};
               let links_dict = {};
-              node_dict["id"] = Number(j);
+              // node_dict["id"] = String(num);
               node_dict["name"] = resp[i]["RES"][j];
               node_dict["category"] = 2; //2=>RES
               links_dict["source"] = source;
@@ -63,6 +72,33 @@ export default {
               links_dict["name"] = "结果";
               _this.graph_data["node"].push(node_dict);
               _this.graph_data["links"].push(links_dict);
+              // num += 1;
+            }
+            for (let k in resp[i]["PER"]) {
+              let node_dict = {};
+              let links_dict = {};
+              // node_dict["id"] = String(num);
+              node_dict["name"] = resp[i]["PER"][k];
+              node_dict["category"] = 3; //1=>TIME
+              links_dict["source"] = source;
+              links_dict["target"] = resp[i]["PER"][k];
+              links_dict["name"] = "人物";
+              _this.graph_data["node"].push(node_dict);
+              _this.graph_data["links"].push(links_dict);
+              // num += 1;
+            }
+            for (let k in resp[i]["ORG"]) {
+              let node_dict = {};
+              let links_dict = {};
+              // node_dict["id"] = String(num);
+              node_dict["name"] = resp[i]["ORG"][k];
+              node_dict["category"] = 4; //1=>TIME
+              links_dict["source"] = source;
+              links_dict["target"] = resp[i]["ORG"][k];
+              links_dict["name"] = "机构";
+              _this.graph_data["node"].push(node_dict);
+              _this.graph_data["links"].push(links_dict);
+              // num += 1;
             }
           }
           console.log(_this.graph_data);
@@ -77,7 +113,7 @@ export default {
       let myChart = echarts.init(document.getElementById("main-chart"));
       let option = {
         title: {
-          text: "Graph 简单示例",
+          text: "图谱展示",
         },
         tooltip: { formatter: "{b}" }, //提示框
         animationDurationUpdate: 1500,
@@ -86,7 +122,6 @@ export default {
           {
             type: "graph",
             layout: "force",
-            // symbolSize: 50, //倘若该属性不在link里，则其表示节点的大小；否则即为线两端标记的大小
             symbolSize: (value, params) => {
               switch (params.data.category) {
                 case 0:
@@ -98,29 +133,47 @@ export default {
                 case 2:
                   return 75;
                   break;
+                case 3:
+                  return 75;
+                  break;
+                case 4:
+                  return 75;
+                  break;
               }
             },
             roam: true, //鼠标缩放功能
             label: {
               show: true, //是否显示标签
+              color: "#fff",
+            },
+            itemStyle: {
+              color: "#000",
             },
             focusNodeAdjacency: true, //鼠标移到节点上时突出显示结点以及邻节点和边
             edgeSymbol: ["none", "none"], //关系两边的展现形式，也即图中线两端的展现形式。arrow为箭头
             edgeSymbolSize: [4, 10],
             draggable: true,
             edgeLabel: {
-              fontSize: 20, //关系（也即线）上的标签字体大小
+              normal: {
+                show: true,
+                //通过回调函数设置连线上的标签
+                formatter: function (x) {
+                  return x.data.name;
+                },
+              },
             },
             force: {
-              repulsion: 500,
-              edgeLength: 120,
+              repulsion: 200,
+              edgeLength: [50, 200],
+              gravity: 0.05,
             },
             data: this.graph_data.node,
             links: this.graph_data.links,
             lineStyle: {
               opacity: 0.9,
-              width: 2,
-              curveness: 0,
+              color: "#000",
+              width: 1,
+              curveness: 0.5,
             },
           },
         ],
@@ -128,60 +181,6 @@ export default {
       myChart.resize();
       myChart.setOption(option);
     },
-    // setOption: function () {
-    //   let option = {
-    //     title: {
-    //       text: "Graph 简单示例",
-    //     },
-    //     tooltip: { formatter: "{b}" }, //提示框
-    //     animationDurationUpdate: 1500,
-    //     animationEasingUpdate: "quinticInOut",
-    //     series: [
-    //       {
-    //         type: "graph",
-    //         layout: "force",
-    //         // symbolSize: 50, //倘若该属性不在link里，则其表示节点的大小；否则即为线两端标记的大小
-    //         symbolSize: (value, params) => {
-    //           switch (params.data.category) {
-    //             case 0:
-    //               return 100;
-    //               break;
-    //             case 1:
-    //               return 75;
-    //               break;
-    //             case 2:
-    //               return 75;
-    //               break;
-    //           }
-    //         },
-    //         roam: true, //鼠标缩放功能
-    //         label: {
-    //           show: true, //是否显示标签
-    //         },
-    //         focusNodeAdjacency: true, //鼠标移到节点上时突出显示结点以及邻节点和边
-    //         edgeSymbol: ["none", "none"], //关系两边的展现形式，也即图中线两端的展现形式。arrow为箭头
-    //         edgeSymbolSize: [4, 10],
-    //         draggable: true,
-    //         edgeLabel: {
-    //           fontSize: 20, //关系（也即线）上的标签字体大小
-    //         },
-    //         force: {
-    //           repulsion: 500,
-    //           edgeLength: 120,
-    //         },
-    //         data: this.graph_data.node,
-    //         links: this.graph_data.links,
-    //         lineStyle: {
-    //           opacity: 0.9,
-    //           width: 2,
-    //           curveness: 0,
-    //         },
-    //       },
-    //     ],
-    //   };
-    //   // console.log(option.series.data);
-    //   return option;
-    // },
   },
 };
 </script>
@@ -190,5 +189,6 @@ export default {
 #graph-chart {
   height: 100%;
   width: 100%;
+  border: 1px solid rgba(138, 148, 155, 0.2);
 }
 </style>
