@@ -46,6 +46,8 @@ class ExtractData:
         result_dict["LOC"] = []
         result_dict["TIME"] = []
         result_dict["RES"] = []
+        result_dict["ORG"] = []
+        result_dict["PER"] = []
         for index, row in enumerate(result_data_dict['data']):
             if row["pos"] == 'LOC':
                 if len(result_dict["LOC"]) != 0:
@@ -54,11 +56,17 @@ class ExtractData:
                     result_dict["LOC"] = []
                     result_dict["TIME"] = []
                     result_dict["RES"] = []
+                    result_dict["ORG"] = []
+                    result_dict["PER"] = []
                 result_dict["LOC"] = row["item"]
             elif row["pos"] == 'TIME' and row["item"] not in result_dict["TIME"]:
                 result_dict["TIME"].append(row["item"])
             elif row["pos"] == 'RES' and row["item"] not in result_dict["RES"]:
                 result_dict["RES"].append(row["item"])
+            elif row["pos"] == 'ORG' and row["item"] not in result_dict["ORG"]:
+                result_dict["ORG"].append(row["item"])
+            elif row["pos"] == 'PER' and row["item"] not in result_dict["PER"]:
+                result_dict["PER"].append(row["item"])
             if index == (len(result_data_dict['data'])-1):
                 figure_data_dict['data'].append(result_dict)
         return figure_data_dict
