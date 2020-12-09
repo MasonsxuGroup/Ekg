@@ -18,11 +18,26 @@ class ExtractData:
         result_list = my_lac.run(text)
         result_data_dict = {}
         result_data_dict["data"] = []
+        number_data = ''
         for index in range(len(result_list[0])):
             result_dict = {}
-            result_dict["item"] = result_list[0][index]
-            result_dict["pos"] = result_list[1][index]
-            result_data_dict["data"].append(result_dict)
+            if ((str(result_list[0][index]).isdigit() is False) and (str(result_list[0][index][:-1]).isdigit() is False)) or ((index == len(result_list[0]) - 1) and (number_data == '')):
+                result_dict["item"] = result_list[0][index]
+                result_dict["pos"] = result_list[1][index]
+                result_data_dict["data"].append(result_dict)
+            elif (index == len(result_list[0]) - 1) and (number_data != ''):
+                number_data += result_list[0][index]
+                result_dict["item"] = number_data
+                result_dict["pos"] = result_list[1][index]
+                result_data_dict["data"].append(result_dict)
+            elif (str(result_list[0][index]).isdigit()) and ((str(result_list[0][index+1]).isdigit()) or (str(result_list[0][index+1][:-1]).isdigit())):
+                number_data += result_list[0][index]
+            elif ((str(result_list[0][index][:-1]).isdigit()) or (str(result_list[0][index]).isdigit())) and (str(result_list[0][index+1]).isdigit() is False):
+                number_data += result_list[0][index]
+                result_dict["item"] = number_data
+                result_dict["pos"] = result_list[1][index]
+                result_data_dict["data"].append(result_dict)
+                number_data = ''
         file_path = 'Back_End/static/data/result_data_dict.json'
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(str(result_data_dict).replace("'", '"'))
