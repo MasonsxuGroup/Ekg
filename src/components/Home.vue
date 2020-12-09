@@ -1,10 +1,10 @@
 <template>
   <div id="home">
-    <el-container style="height: 600px; border: 1px solid #eee">
+    <el-container style="height: 100%; border: 1px solid #eee">
       <el-header>
         <span>突发事件知识图谱</span>
         <el-dropdown
-          style="float: right; font-size: 12px; right: 145px; height: 30px"
+          style="float: right; font-size: 12px; right: 145px; height: 60px"
         >
           <i class="el-icon-setting" style="margin-right: 15px"></i>
           <el-dropdown-menu slot="dropdown">
@@ -15,7 +15,9 @@
         </el-dropdown>
         <span style="float: right; text-align: right">{{ user }}</span>
       </el-header>
-      <el-container>
+      <el-container
+        style="position: absolute; top: 60px; height: 100%; width: 100%"
+      >
         <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
           <el-menu router :default-openeds="['2']">
             <el-submenu
@@ -39,7 +41,7 @@
           </el-menu>
         </el-aside>
         <el-container>
-          <el-main>
+          <el-main style="overflow: hidden">
             <router-view></router-view>
           </el-main>
         </el-container>
@@ -70,15 +72,15 @@ export default {
   mounted() {
     // this.getRouter();
   },
-  watch: {
-    $route: {
-      handler: function (val, oldVal) {
-        console.log(val);
-      },
-      // 深度观察监听
-      deep: true,
-    },
-  },
+  // watch: {
+  //   $route: {
+  //     handler: function (val, oldVal) {
+  //       console.log(val);
+  //     },
+  //     // 深度观察监听
+  //     deep: true,
+  //   },
+  // },
 };
 </script>
 

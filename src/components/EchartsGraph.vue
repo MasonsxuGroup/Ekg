@@ -1,11 +1,19 @@
 <template>
   <div id="graph-chart">
-    <div id="main-chart" style="width: 100%; height: 500px"></div>
+    <div id="main-chart" style="width: 100%; height: 100%"></div>
   </div>
 </template>
 
 <script>
-import echarts from "echarts";
+//引入基本模板
+let echarts = require("echarts/lib/echarts");
+
+//引入图形类型
+require("echarts/lib/chart/graph");
+
+//引入使用组件title、tooltip等
+require("echarts/lib/component/title");
+require("echarts/lib/component/tooltip");
 
 export default {
   name: "graph-echart",
@@ -26,7 +34,6 @@ export default {
         .get("api/figure")
         .then((res) => {
           let resp = res.data.data;
-          console.log(res);
           _this.graph_data["node"] = [];
           _this.graph_data["links"] = [];
           // let num = 0;
@@ -101,7 +108,6 @@ export default {
               // num += 1;
             }
           }
-          console.log(_this.graph_data);
           _this.initChart();
           // console.log(this.graph_data);
         })
@@ -147,7 +153,26 @@ export default {
               color: "#fff",
             },
             itemStyle: {
-              color: "#000",
+              color: function (params, value) {
+                // console.log(value);
+                switch (params.data.category) {
+                  case 0:
+                    return "#0e1f37";
+                    break;
+                  case 1:
+                    return "#8d776e";
+                    break;
+                  case 2:
+                    return "#f45249";
+                    break;
+                  case 3:
+                    return "#1b4a58";
+                    break;
+                  case 4:
+                    return "#66a4ac";
+                    break;
+                }
+              },
             },
             focusNodeAdjacency: true, //鼠标移到节点上时突出显示结点以及邻节点和边
             edgeSymbol: ["none", "none"], //关系两边的展现形式，也即图中线两端的展现形式。arrow为箭头
