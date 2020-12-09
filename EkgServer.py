@@ -34,5 +34,5 @@ def handle_exception_error(e):
 
 if __name__ == "__main__":
     http_server = WSGIServer(('0.0.0.0', 5500), app)
+    print('======>>>Serving HTTP on port 5500...<<<======')
     http_server.serve_forever()
-    print('======>>>EkgServer is listening<<<======')
