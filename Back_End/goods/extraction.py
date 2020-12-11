@@ -39,7 +39,7 @@ class ExtractData:
                     result_dict["pos"] = result_list[1][index]
                     result_data_dict["data"].append(result_dict)
                     number_data = ''
-            file_path = 'static/data/result_data_dict.json'
+            file_path = 'Back_end/static/data/result_data_dict.json'
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(str(result_data_dict).replace("'", '"'))
             return result_data_dict
@@ -58,7 +58,7 @@ class ExtractData:
         """
 
         try:
-            file_path = 'static/data/result_data_dict.json'
+            file_path = 'Back_end/static/data/result_data_dict.json'
             result_data_dict = pd.read_json(file_path, encoding='utf-8')
             figure_data_dict = {}
             figure_data_dict['data'] = []
