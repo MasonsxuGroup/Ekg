@@ -153,5 +153,6 @@ dmypy.json
 hs_err_pid*
 
 # Other files and folders
+.vscode
 .DS_Store
 */.DS_Store
