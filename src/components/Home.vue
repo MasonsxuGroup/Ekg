@@ -58,10 +58,6 @@ export default {
     };
   },
   methods: {
-    // getRouter: function () {
-    //   var a = this.$router.options.routes;
-    //   console.log(a);
-    // },
     jump: function (res) {
       if (res == "github") {
         alert("项目地址，欢迎star！");
@@ -69,18 +65,7 @@ export default {
       }
     },
   },
-  mounted() {
-    // this.getRouter();
-  },
-  // watch: {
-  //   $route: {
-  //     handler: function (val, oldVal) {
-  //       console.log(val);
-  //     },
-  //     // 深度观察监听
-  //     deep: true,
-  //   },
-  // },
+  mounted() {},
 };
 </script>
 

@@ -17,7 +17,6 @@ require("echarts/lib/component/tooltip");
 
 export default {
   name: "graph-echart",
-  // props: ["text"],
   data() {
     return {
       graph_data: {},
@@ -109,7 +108,6 @@ export default {
             }
           }
           _this.initChart();
-          // console.log(this.graph_data);
         })
         .catch((err) => {
           console.log(err);
@@ -129,6 +127,7 @@ export default {
             type: "graph",
             layout: "force",
             symbolSize: (value, params) => {
+              //节点大小设置
               switch (params.data.category) {
                 case 0:
                   return 100;
@@ -154,7 +153,7 @@ export default {
             },
             itemStyle: {
               color: function (params, value) {
-                // console.log(value);
+                //节点颜色设置
                 switch (params.data.category) {
                   case 0:
                     return "#0e1f37";
@@ -189,7 +188,7 @@ export default {
             },
             force: {
               repulsion: 200,
-              edgeLength: [50, 200],
+              edgeLength: [50, 250],
               gravity: 0.05,
             },
             data: this.graph_data.node,

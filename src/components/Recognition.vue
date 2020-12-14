@@ -13,7 +13,6 @@
               type="textarea"
               v-model="ruleForm.content"
               rows="4"
-              style="border-style: ridge"
               maxlength="150"
               show-word-limit
             ></el-input>
@@ -33,7 +32,7 @@
         style="
           padding: 0 15px;
           border-style: grrove;
-          height: 160px;
+          overflow: hidden;
           display: flex;
           flex-wrap: wrap;
         "
@@ -46,7 +45,6 @@
           :class="{ activeClass: index === isActive }"
           :title="resp_values[index]"
         >
-          <!-- <span id="promptBox" v-if="seen">{{resp_values[index]}}</span> -->
           <p
             style="
               margin: 0;
@@ -74,12 +72,10 @@
 </template>
 
 <script>
-// import bus from '../../static/js/eventBus'
 export default {
   data() {
     return {
       isActive: "",
-      // seen: false,
       ruleForm: {
         content:
           "青岛新增3例新冠无症状感染者，北京10月10日无新增报告新冠肺炎确诊病例10月10日0时至24时，无新增报告本地确诊病例、疑似病例和无症状感染者；无新增报告境外输入确诊病例、疑似病例和无症状感染者。",
@@ -113,9 +109,9 @@ export default {
               let value_temp = [];
               if (res.status == 200) {
                 for (let i in resp) {
-                  temp.push(String(resp[i]['item']));
+                  temp.push(String(resp[i]["item"]));
                   _this.entities = temp;
-                  value_temp.push(String(resp[i]['pos']));
+                  value_temp.push(String(resp[i]["pos"]));
                   _this.resp_values = value_temp;
                 }
               }
@@ -156,10 +152,12 @@ export default {
   height: 200px;
   border: 1px solid rgba(138, 148, 155, 0.2);
   margin-bottom: 15px;
+  overflow-y: hidden;
 }
-
+.el-textarea >>> .el-textarea__inner {
+  border-style: ridge;
+}
 #bottom-row {
-  height: 250px;
   border: 1px solid rgba(138, 148, 155, 0.2);
 }
 #mid-form-label,
@@ -173,15 +171,13 @@ export default {
 }
 
 #output-result {
-  // display: inline-block;
   border: 1px solid #e0e0e0;
   border-radius: 4%;
   background-color: white;
-  // float: left;
+  overflow: hidden;
   font-size: 15px;
   margin: 5px;
   height: 48px;
-  // line-height: 38px;
 }
 .activeClass {
   background-color: #409eff !important;
