@@ -72,14 +72,11 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
       isActive: "",
-      ruleForm: {
-        content:
-          "青岛新增3例新冠无症状感染者，北京10月10日无新增报告新冠肺炎确诊病例10月10日0时至24时，无新增报告本地确诊病例、疑似病例和无症状感染者；无新增报告境外输入确诊病例、疑似病例和无症状感染者。",
-      },
       rules: {
         content: [
           { required: true, message: "输入内容不能为空！", trigger: "blur" },
@@ -95,6 +92,11 @@ export default {
       resp_values: [],
       result: "",
     };
+  },
+  computed: {
+    ...mapState({
+      ruleForm: (state) => state.ruleForm,
+    }),
   },
   methods: {
     submitForm(formName) {
