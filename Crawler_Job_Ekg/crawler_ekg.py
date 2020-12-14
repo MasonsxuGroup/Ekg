@@ -8,7 +8,10 @@ from multiprocessing.pool import Pool
 from selenium.webdriver import Firefox
 from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
+desired_capabilities = DesiredCapabilities.CHROME
+desired_capabilities['pageLoadStrategy'] = 'none'
 crawler_service = Service(executable_path='geckodriver',)
 crawler_service.command_line_args()
 crawler_service.start()
@@ -63,22 +66,19 @@ def get_news_data(title_ulr_list):
 
 
 def sand_url():
-    type_lists = ['yqtb', 'fkdt', 'zhengcwj', 'yhfc']
+    section_types = pd.read_json('Crawler_Job_Ekg/config/config.json')['section_types']
     urls = []
-    for type_index in trange(len(type_lists)):
-        type = type_lists[type_index]
-        url = "http://www.nhc.gov.cn/xcs/" + str(type) + "/list_gzbd.shtml"
-        browser.get(url)
-        time.sleep(3)
-        page_tag = str(
-            browser.find_elements_by_class_name('pagination_index_last').text
+    for section_type in section_types:
+        url = (
+            "http://www.nhc.gov.cn/xcs/"
+            + str(section_type['type'])
+            + "/list_gzbd.shtml"
         )
-        max_num = re.findall(".*共(.*)页.*", page_tag)
         urls.append(url)
-        for page in range(2, max_num):
+        for page in range(2, int(section_type['pagination'])):
             url = (
                 "http://www.nhc.gov.cn/xcs/"
-                + str(type)
+                + str(section_type['type'])
                 + "/list_gzbd_"
                 + str(page)
                 + ".shtml"
@@ -136,6 +136,5 @@ def run(folderpath_dest):
 
 
 if __name__ == '__main__':
-    # folderpath_dest = 'Crawler_Job_Ekg/NHC_Data'
-    # run(folderpath_dest)
-    sand_url()
+    folderpath_dest = 'Crawler_Job_Ekg/NHC_Data'
+    run(folderpath_dest)
