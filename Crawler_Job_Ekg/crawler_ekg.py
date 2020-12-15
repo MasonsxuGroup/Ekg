@@ -33,7 +33,7 @@ def find_news_data(news_data_list):
         返回符合预定长度的事件详细 list
     """
 
-    return len(news_data_list) == 4
+    return len(news_data_list) == 4 and len(news_data_list[3]) > 0
 
 
 def get_html(url, cookie=None):
@@ -144,7 +144,6 @@ def get_news_data(title_ulr_list):
         soup = BeautifulSoup(html, 'lxml')
         try:
             content = soup.find('div', {'class': 'con'}).text
-            print(content.encode('utf-8'))
             punc = u' \t\n\r\x0b\x0c\xc2\xa0\u2002\u3000'
             trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
             news_list.append(str(content).translate(trans).replace('分享到', ''))
@@ -159,7 +158,9 @@ def get_news_data(title_ulr_list):
             content = soup.find('div', {'class': 'con'}).text
             punc = u' \t\n\r\x0b\x0c\xc2\xa0\u2002\u3000'
             trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
-            news_list.append(str(content).translate(trans).replace('分享到', ''))
+            news_list.append(
+                str(content).translate(trans).replace(',', '，').replace('分享到', '')
+            )
         except Exception as e:
             print("======>>>跳过当前非文本页面<<<======")
     return news_list
