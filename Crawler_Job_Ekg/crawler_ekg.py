@@ -88,19 +88,26 @@ def get_news_data(title_ulr_list):
     try:
         html = get_html(title_ulr_list[1], cookie=cookie)
         soup = BeautifulSoup(html, 'lxml')
-        content = soup.find('div', {'class': 'con'}).text
-        punc = string.whitespace  # 需要删除的特殊字符
-        trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
-        news_list.append(str(content).translate(trans).replace('分享到', ''))
+        try:
+            content = soup.find('div', {'class': 'con'}).text
+            print(content.encode('utf-8'))
+            punc = u' \t\n\r\x0b\x0c\xc2\xa0\u2002\u3000'
+            trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
+            news_list.append(str(content).translate(trans).replace('分享到', ''))
+        except Exception as e:
+            print("======>>>跳过当前非文本页面<<<======")
     except Exception as e:
         print("======>>>ERROR: 重新获取 Cookie <<<======")
         cookie = get_cookie(title_ulr_list[1])
         html = get_html(title_ulr_list[1], cookie=cookie)
         soup = BeautifulSoup(html, 'lxml')
-        content = soup.find('div', {'class': 'con'}).text
-        punc = string.whitespace  # 需要删除的特殊字符
-        trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
-        news_list.append(str(content).translate(trans).replace('分享到', ''))
+        try:
+            content = soup.find('div', {'class': 'con'}).text
+            punc = u' \t\n\r\x0b\x0c\xc2\xa0\u2002\u3000'
+            trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
+            news_list.append(str(content).translate(trans).replace('分享到', ''))
+        except Exception as e:
+            print("======>>>跳过当前非文本页面<<<======")
     return news_list
 
 
