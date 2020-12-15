@@ -1,3 +1,4 @@
+import random
 import pandas as pd
 from LAC import LAC
 from tqdm.std import trange
@@ -13,7 +14,8 @@ texts = []
 for data_index in trange(len(data)):
     line = data[data_index][0]
     texts.append(line)
-lac_result = my_lac.run(texts[:10])
+start = random.randint(0, len(data) - 10)
+lac_result = my_lac.run(texts[start : start + 10])
 
 sheet = pd.DataFrame(lac_result)
 sheet.to_csv('Model_Code/result/result_lac.csv', index=None, header=None)
