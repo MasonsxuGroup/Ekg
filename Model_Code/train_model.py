@@ -30,10 +30,14 @@ def merge_all_data(folderpath_origin, folderpath_dest):
             elif data[1] == 'O':
                 data_str = data[0] + '/O '
                 f.write(data_str)
-            elif (all_data[data_index + 1][1][0] == 'B') and (data[1][2:] == all_data[data_index + 1][1][2:]):
+            elif (all_data[data_index + 1][1][0] == 'B') and (
+                data[1][2:] == all_data[data_index + 1][1][2:]
+            ):
                 data_str = data[0] + '/' + data[1][2:] + ' '
                 f.write(data_str)
-            elif (all_data[data_index + 1][1][0] != 'B') and (data[1][2:] == all_data[data_index + 1][1][2:]):
+            elif (all_data[data_index + 1][1][0] != 'B') and (
+                data[1][2:] == all_data[data_index + 1][1][2:]
+            ):
                 data_str = data[0]
                 f.write(data_str)
             elif data[1][2:] != all_data[data_index + 1][1][2:]:
@@ -126,12 +130,12 @@ def train_model(model_path, train_file_path, test_file_path):
     # 训练和测试数据集，格式一致
     train_file = train_file_path
     test_file = test_file_path
-    lac.train(model_save_dir=model_path,
-              train_data=train_file, test_data=test_file)
+    lac.train(model_save_dir=model_path, train_data=train_file, test_data=test_file)
 
 
-def run(folderpath_origin, folderpath_dest,
-        model_path, train_file_path, test_file_path):
+def run(
+    folderpath_origin, folderpath_dest, model_path, train_file_path, test_file_path
+):
     """ 训练模型
 
     Args:
@@ -155,5 +159,4 @@ if __name__ == "__main__":
     model_path = 'Model_Code/model/'
     train_file_path = 'Model_Code/data/train.tsv'
     test_file_path = 'Model_Code/data/test.tsv'
-    run(folderpath_origin, folderpath_dest,
-        model_path, train_file_path, test_file_path)
+    run(folderpath_origin, folderpath_dest, model_path, train_file_path, test_file_path)
