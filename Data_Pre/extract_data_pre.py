@@ -29,9 +29,11 @@ def fetch_token():
         :access_token: API访问令牌
     """
 
-    params = {'grant_type': 'client_credentials',
-              'client_id': API_KEY,
-              'client_secret': SECRET_KEY}
+    params = {
+        'grant_type': 'client_credentials',
+        'client_id': API_KEY,
+        'client_secret': SECRET_KEY,
+    }
     post_data = urlencode(params)
     post_data = post_data.encode('utf-8')
     req = Request(TOKEN_URL, post_data)
@@ -45,7 +47,7 @@ def fetch_token():
 
     result = json.loads(result_str)
 
-    if ('access_token' in result.keys() and 'scope' in result.keys()):
+    if 'access_token' in result.keys() and 'scope' in result.keys():
         if not 'brain_all_scope' in result['scope'].split(' '):
             print('please ensure has check the  ability')
             exit()
@@ -70,10 +72,7 @@ def make_request(url, comment_list):
     res_data_list = []  # 存放数据中的所有 res 实体
     res_data_dict = {}  # 存放数据中的单个 res 实体
     for comment in comment_list:
-        response = request(url, json.dumps(
-            {
-                "text": comment + '。',
-            }))
+        response = request(url, json.dumps({"text": comment + '。',}))
         data = json.loads(response)
         if "error_code" not in data or data["error_code"] == 0:
             for item in data["items"]:
@@ -82,7 +81,12 @@ def make_request(url, comment_list):
                     res_data_dict['item'] = item['item']
                     res_data_list.append(res_data_dict)
                     res_data_dict = {}
-                elif item['pos'] == 'v' or item['pos'] == 'vn' or item['pos'] == 'n' or item['pos'] == 'm':
+                elif (
+                    item['pos'] == 'v'
+                    or item['pos'] == 'vn'
+                    or item['pos'] == 'n'
+                    or item['pos'] == 'm'
+                ):
                     res_data_dict['marker'] = 'RES'
                     res_data_dict['item'] = item['item']
                     res_data_list.append(res_data_dict)
@@ -132,21 +136,17 @@ def get_data(folderpath_origin):
 
     filename = os.listdir(folderpath_origin)
     all_data = []
-    punc = '　# '  # 需要删除的特殊字符
-    trans = str.maketrans({key: None for key in punc})  # 删除特殊字符
     for name in filename:
         path = folderpath_origin + name
         if path[-5:] == '.xlsx':
             data = pd.read_excel(path)
             abstracts = data['摘要'].to_list()
             for abstract in abstracts:
-                abstract = str(abstract).translate(trans).replace('\u200b', '')
                 all_data.append(abstract)
         elif path[-4:] == '.csv':
             data = pd.read_csv(path)
             detaileds = data['详细'].to_list()
             for detailed in detaileds:
-                detailed = str(detailed).translate(trans).replace('\u200b', '')
                 all_data.append(detailed)
     new_all_data = []
     print('开始去重处理！！！')
