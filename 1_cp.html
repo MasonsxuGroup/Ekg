@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map1</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="/js/map_render.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script type='text/javascript'
+        src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&setLang=en-US&key=AnXtNHJg0FMDQi9Ehlgbaect2IIQfZEvvs05iLZJVA8I0hP3cc3w4uM-hLMOTjhW'
+        async defer></script>
+    <link rel="stylesheet" href="/css/bingMap.css">
+    <link rel="stylesheet" href="/css/timer.css">
+    <style type="text/css">
+        body {
+            color: black;
+            margin: 0;
+            overflow: hidden;
+            background: #fff;
+            width: 100%;
+            height: 100%
+        }
+
+        .bm_bottomLeftOverlay {
+            display: none !important;
+        }
+
+        .MicrosoftMap .bm_bottomRightOverlay .CopyrightContainer.quadrantOverride {
+            display: none;
+        }
+
+        .MicrosoftMap .NavBar_Container .NavBar_MapTypeButtonContainerWrapper {
+            display: none;
+        }
+
+        .btn-control {
+            width: 34px;
+            height: 34px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            background-color: #fff;
+            position: absolute;
+            right: 30px;
+            top: 192px;
+            border: 1.5px solid #444444;
+            border-radius: 50%;
+        }
+
+        .btn-play:before {
+            /* display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 14px 0 14px 19px;
+            border-color: transparent transparent transparent black;
+            margin: 3px 0 0 10px; */
+            display: block;
+            content: "";
+            width: 10px;
+            height: 20px;
+            border-style: solid;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+            margin: 2px 0 0 10px;
+        }
+
+        .btn-pause:after {
+            /* content: "";
+            border-style: double;
+            border-width: 0px 0px 0px 20px;
+            position: relative;
+            top: 6px;
+            left: 7px; */
+            content: 'x';
+            display: block;
+            width: 20px;
+            height: 5px;
+            color: #444;
+            font-size: xx-large;
+            margin: -7px 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--地图-->
+    <div id="myMap" style="position:relative;width:100%;height:100%;"></div>
+    <!--时间轴-->
+    <div class="heatMapTimer">
+        <ul class="time-line">
+            <li class="time-btn time-play"></li>
+            <li class="time-item active data_index_0" data-index="0">
+                <i class='time-date' id="time_0">2019/12/31</i>
+            </li>
+            <li class="time-item data_index_1" data-index="1">
+                <i class='time-date' id="time_1">2020/1/1</i>
+            </li>
+            <li class="time-item data_index_2" data-index="2">
+                <i class='time-date' id="time_2">2020/1/7</i>
+            </li>
+            <li class="time-item data_index_3" data-index="3">
+                <i class='time-date' id="time_3">2020/1/11</i>
+            </li>
+            <li class="time-item data_index_4" data-index="4">
+                <i class='time-date' id="time_4">2020/1/19</i>
+            </li>
+            <li class="time-item data_index_5" data-index="5">
+                <i class='time-date' id="time_5">2020/1/20</i>
+            </li>
+        </ul>
+    </div>
+    <!--播放功能-->
+    <div class="btn-control btn-play" onclick="btnControl()"></div>
+</body>
+<script src="/js/timer.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        timeClick()
+    })
+</script>
+
+</html>

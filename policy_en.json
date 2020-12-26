@@ -1,0 +1,722 @@
+[
+  {
+    "startTime": "2019/12/31",
+    "name": "国家卫健委专家组抵达武汉检测核实情况",
+    "type": "Policies and measures of nation",
+    "value": 59.6
+  },
+  {
+    "startTime": "2020/1/1",
+    "name": "8名涉嫌散布武汉肺炎谣言者被警方依法查处",
+    "type": "Policies and measures of Wuhan City",
+    "value": 49.7
+  },
+  {
+    "startTime": "2020/1/1",
+    "name": "华南海鲜市场休市整治",
+    "type": "Policies and measures of Wuhan City",
+    "value": 53.8
+  },
+  {
+    "startTime": "2020/1/7",
+    "name": "2020年武汉市“两会”于1月6日至10日召开",
+    "type": "Policies and measures of Wuhan City",
+    "value": 57.7
+  },
+  {
+    "startTime": "2020/1/11",
+    "name": "2020年湖北省“两会”召开",
+    "type": "Policies and measures of Hubei Province",
+    "value": 60.8
+  },
+  {
+    "startTime": "2020/1/19",
+    "name": "国家卫健委向全国各省派出工作组指导疫情防控工作",
+    "type": "Policies and measures of nation",
+    "value": 44.9
+  },
+  {
+    "startTime": "2020/1/20",
+    "name": "国家卫健委将新型肺炎纳入法定传染病乙类管理",
+    "type": "Policies and measures of nation",
+    "value": 42.2
+  },
+  {
+    "startTime": "2020/1/21",
+    "name": "武汉宣布对进出武汉人员进行管控",
+    "type": "Policies and measures of Wuhan City",
+    "value": 62.8
+  },
+  {
+    "startTime": "2020/1/21",
+    "name": "国家医保局：对确诊为新型肺炎患者采取特殊报销政策",
+    "type": "Policies and measures of nation",
+    "value": 55.8
+  },
+  {
+    "startTime": "2020/1/21",
+    "name": "交通运输部启动Ⅱ级应急响应",
+    "type": "Policies and measures of nation",
+    "value": 52.6
+  },
+  {
+    "startTime": "2020/1/22",
+    "name": "湖北省启动突发公共事件二级应急响应",
+    "type": "Policies and measures of Hubei Province",
+    "value": 53.2
+  },
+  {
+    "startTime": "2020/1/23",
+    "name": "武汉宣布“封城”",
+    "type": "Policies and measures of Wuhan City",
+    "value": 73.4
+  },
+  {
+    "startTime": "2020/1/23",
+    "name": "浙江、湖南、广东相继启动重大公共突发卫生事件一级响应",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 63.9
+  },
+  {
+    "startTime": "2020/1/24",
+    "name": "湖北省启动突发公共事件一级应急响应",
+    "type": "Policies and measures of Hubei Province",
+    "value": 61.4
+  },
+  {
+    "startTime": "2020/1/24",
+    "name": "国务院办公厅发布《关于征集新型冠状病毒感染的肺炎疫情防控工作问题线索及意见建议的公告》",
+    "type": "Policies and measures of nation",
+    "value": 49.0
+  },
+  {
+    "startTime": "2020/1/24",
+    "name": "武汉新建两所医院:“火神山”和“雷神山”",
+    "type": "Policies and measures of Wuhan City",
+    "value": 83.8
+  },
+  {
+    "startTime": "2020/1/25",
+    "name": "武汉中心城区实行机动车禁行管理",
+    "type": "Policies and measures of Wuhan City",
+    "value": 48.0
+  },
+  {
+    "startTime": "2020/1/25",
+    "name": "全国30个省市自治区启动重大突发公共卫生事件一级响应",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 48.9
+  },
+  {
+    "startTime": "2020/1/25",
+    "name": "党中央成立应对疫情工作领导小组",
+    "type": "Policies and measures of nation",
+    "value": 59.2
+  },
+  {
+    "startTime": "2020/1/26",
+    "name": "国务院办公厅发布关于延长2020年春节假期的通知",
+    "type": "Policies and measures of nation",
+    "value": 67.2
+  },
+  {
+    "startTime": "2020/1/27",
+    "name": "教育部发布关于2020年春季学期延期开学的通知",
+    "type": "Policies and measures of nation",
+    "value": 61.6
+  },
+  {
+    "startTime": "2020/1/28",
+    "name": "武汉成立专项督查组 督查患者“应住尽住”情况",
+    "type": "Policies and measures of Wuhan City",
+    "value": 49.0
+  },
+  {
+    "startTime": "2020/1/28",
+    "name": "黄冈版小汤山正式启用",
+    "type": "Policies and measures of Hubei Province",
+    "value": 55.3
+  },
+  {
+    "startTime": "2020/1/29",
+    "name": "中国内地31省份全部启动突发公共卫生事件一级响应",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 50.2
+  },
+  {
+    "startTime": "2020/1/30",
+    "name": "国务院办公厅发布关于组织做好疫情防控重点物资生产企业复工复产和调度安排工作的紧急通知",
+    "type": "Policies and measures of nation",
+    "value": 50.5
+  },
+  {
+    "startTime": "2020/2/2",
+    "name": "湖北公布接收捐赠情况",
+    "type": "Policies and measures of Hubei Province",
+    "value": 46.1
+  },
+  {
+    "startTime": "2020/2/2",
+    "name": "火神山医院完成交付",
+    "type": "Policies and measures of Wuhan City",
+    "value": 57.2
+  },
+  {
+    "startTime": "2020/2/3",
+    "name": "交通部等七部门：湖北以外地区有序逐渐恢复交通",
+    "type": "Policies and measures of nation",
+    "value": 51.5
+  },
+  {
+    "startTime": "2020/2/4",
+    "name": "湖北省红十字会3名领导被问责",
+    "type": "Policies and measures of Hubei Province",
+    "value": 61.4
+  },
+  {
+    "startTime": "2020/2/4",
+    "name": "澳门暂停博彩业和相关娱乐业运行半个月",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 54.1
+  },
+  {
+    "startTime": "2020/2/4",
+    "name": "中央明确：再增加2000名医护人员支援湖北",
+    "type": "Policies and measures of nation",
+    "value": 47.8
+  },
+  {
+    "startTime": "2020/2/5",
+    "name": "《新型冠状病毒感染的肺炎诊疗方案（试行第五版）》公布",
+    "type": "Policies and measures of nation",
+    "value": 65.0
+  },
+  {
+    "startTime": "2020/2/7",
+    "name": "习近平应约同美国总统特朗普通电话",
+    "type": "Policies and measures of nation",
+    "value": 59.2
+  },
+  {
+    "startTime": "2020/2/8",
+    "name": "王贺胜任湖北省委委员、常委",
+    "type": "Policies and measures of nation",
+    "value": 58.5
+  },
+  {
+    "startTime": "2020/2/8",
+    "name": "武汉雷神山医院交付使用 收治首批患者",
+    "type": "Policies and measures of Wuhan City",
+    "value": 50.5
+  },
+  {
+    "startTime": "2020/2/8",
+    "name": "武汉征用多所高校宿舍改造为定点医疗点",
+    "type": "Policies and measures of Wuhan City",
+    "value": 56.3
+  },
+  {
+    "startTime": "2020/2/10",
+    "name": "习近平在北京调研指导新冠肺炎疫情防控工作",
+    "type": "Policies and measures of nation",
+    "value": 65.4
+  },
+  {
+    "startTime": "2020/2/10",
+    "name": "湖北省卫健委党组书记主任双双被免职 ",
+    "type": "Policies and measures of Hubei Province",
+    "value": 62.4
+  },
+  {
+    "startTime": "2020/2/10",
+    "name": "中央赴湖北指导组约谈武汉市副市长等3人",
+    "type": "Policies and measures of nation",
+    "value": 60.7
+  },
+  {
+    "startTime": "2020/2/11",
+    "name": "教育部：强行要求所有教师录播课程必须制止",
+    "type": "Policies and measures of nation",
+    "value": 58.2
+  },
+  {
+    "startTime": "2020/2/13",
+    "name": "湖北省委主要负责同志职务调整",
+    "type": "Policies and measures of nation",
+    "value": 66.3
+  },
+  {
+    "startTime": "2020/2/14",
+    "name": "多地明确延迟开学时间可用暑期补齐",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 60.7
+  },
+  {
+    "startTime": "2020/2/14",
+    "name": "中央赴湖北指导组：发起武汉保卫战、湖北保卫战全面总攻",
+    "type": "Policies and measures of nation",
+    "value": 57.3
+  },
+  {
+    "startTime": "2020/2/13",
+    "name": "四川一辅警不配合疫情检测点工作被停职",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 55.8
+  },
+  {
+    "startTime": "2020/2/14",
+    "name": "湖北启动重大气象灾害三级响应",
+    "type": "Policies and measures of Hubei Province",
+    "value": 53.9
+  },
+  {
+    "startTime": "2020/2/14",
+    "name": "张家界疾控中心科长到泰国躲避疫情被撤职",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 57.7
+  },
+  {
+    "startTime": "2020/2/15",
+    "name": "央行：中国不会出现大规模通货膨胀",
+    "type": "Policies and measures of nation",
+    "value": 56.9
+  },
+  {
+    "startTime": "2020/2/16",
+    "name": "湖北通报6起防疫不力问责8人",
+    "type": "Policies and measures of Hubei Province",
+    "value": 53.3
+  },
+  {
+    "startTime": "2020/2/16",
+    "name": "武汉社区漏报疑似病例患者自缢身亡 多人被处分",
+    "type": "Policies and measures of Wuhan City",
+    "value": 54.6
+  },
+  {
+    "startTime": "2020/2/16",
+    "name": "武汉出台措施进一步加强公共场所疫情防控",
+    "type": "Policies and measures of Wuhan City",
+    "value": 55.1
+  },
+  {
+    "startTime": "2020/2/17",
+    "name": "生产销售问题医用口罩最高可判无期",
+    "type": "Policies and measures of nation",
+    "value": 57.0
+  },
+  {
+    "startTime": "2020/2/17",
+    "name": "教育部：全国范围内3月托福GRE考试全部取消",
+    "type": "Policies and measures of nation",
+    "value": 57.2
+  },
+  {
+    "startTime": "2020/2/17",
+    "name": "全国重症医务人员近10%投入武汉",
+    "type": "Policies and measures of nation",
+    "value": 57.2
+  },
+  {
+    "startTime": "2020/2/17",
+    "name": "两部门：符合条件的因工作感染新冠肺炎殉职人员应评定为烈士",
+    "type": "Policies and measures of nation",
+    "value": 60.6
+  },
+  {
+    "startTime": "2020/2/18",
+    "name": "习近平应约同法国总统马克龙通电话",
+    "type": "Policies and measures of nation",
+    "value": 54.1
+  },
+  {
+    "startTime": "2020/2/18",
+    "name": "武汉再发现居家确诊病人将被问责",
+    "type": "Policies and measures of Wuhan City",
+    "value": 57.5
+  },
+  {
+    "startTime": "2020/2/18",
+    "name": "国常会决定：阶段性减免企业社保费和实施企业缓缴住房公积金政策",
+    "type": "Policies and measures of nation",
+    "value": 60.7
+  },
+  {
+    "startTime": "2020/2/18",
+    "name": "工信部：短信可以为16亿手机用户提供“行程证明”",
+    "type": "Policies and measures of nation",
+    "value": 60.7
+  },
+  {
+    "startTime": "2020/2/19",
+    "name": "国家卫健委发布《新型冠状病毒感染的肺炎诊疗方案（试行第六版）》",
+    "type": "Policies and measures of nation",
+    "value": 64.2
+  },
+  {
+    "startTime": "2020/2/19",
+    "name": "习近平：务必高度重视对医务人员的保护关心爱护",
+    "type": "Policies and measures of nation",
+    "value": 57.9
+  },
+  {
+    "startTime": "2020/2/20",
+    "name": "习近平应约同巴基斯坦总理伊姆兰·汗通电话",
+    "type": "Policies and measures of nation",
+    "value": 53.6
+  },
+  {
+    "startTime": "2020/2/21",
+    "name": "山东浙江多人因监狱内疫情防控不力被免职",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 61.3
+  },
+  {
+    "startTime": "2020/2/21",
+    "name": "湖北监狱系统确诊新冠肺炎病例271例 武汉女子监狱监狱长被免职",
+    "type": "Policies and measures of Hubei Province",
+    "value": 63.8
+  },
+  {
+    "startTime": "2020/2/23",
+    "name": "统筹推进新冠肺炎疫情防控和经济社会发展工作部署会议在京召开",
+    "type": "Policies and measures of nation",
+    "value": 64.3
+  },
+  {
+    "startTime": "2020/2/23",
+    "name": "全国多地下调新冠肺炎疫情应急响应等级",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 61.6
+  },
+  {
+    "startTime": "2020/2/24",
+    "name": "武汉宣布：放开离汉通道的通告无效",
+    "type": "Policies and measures of Wuhan City",
+    "value": 64.5
+  },
+  {
+    "startTime": "2020/2/24",
+    "name": "大理扣押口罩被严肃查处：市委书记被免职市长撤职",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 61.7
+  },
+  {
+    "startTime": "2020/2/24",
+    "name": "青岛：严防境外人员输入，坚决防止疫情输入扩散",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 57.5
+  },
+  {
+    "startTime": "2020/2/25",
+    "name": "国务院就中小学疫情防控发文：建议教师戴口罩授课 ?",
+    "type": "Policies and measures of nation",
+    "value": 60.9
+  },
+  {
+    "startTime": "2020/2/25",
+    "name": "威海：日韩等国入境者统一免费集中居住14天",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 56.0
+  },
+  {
+    "startTime": "2020/2/25",
+    "name": "国务院印发《关于规范医疗机构开展新型冠状病毒肺炎药物治疗临床研究的通知》",
+    "type": "Policies and measures of nation",
+    "value": 44.6
+  },
+  {
+    "startTime": "2020/2/26",
+    "name": "中央多部门联合调查组对刑释人员离汉抵京事件进行调查",
+    "type": "Policies and measures of nation",
+    "value": 65.5
+  },
+  {
+    "startTime": "2020/2/26",
+    "name": "民政部：对因疫情在家隔离孤寡老人、留守儿童进行排查摸底",
+    "type": "Policies and measures of nation",
+    "value": 56.5
+  },
+  {
+    "startTime": "2020/2/26",
+    "name": "王毅同日韩外长通电话",
+    "type": "Policies and measures of nation",
+    "value": 55.5
+  },
+  {
+    "startTime": "2020/2/26",
+    "name": "习近平等同志为支持疫情防控工作捐款",
+    "type": "Policies and measures of nation",
+    "value": 51.6
+  },
+  {
+    "startTime": "2020/2/27",
+    "name": "司法部就外国人永久居留管理条例公开征求意见",
+    "type": "Policies and measures of nation",
+    "value": 52.2
+  },
+  {
+    "startTime": "2020/2/27",
+    "name": "教育部：4月全国高等教育自学考试延期举行",
+    "type": "Policies and measures of nation",
+    "value": 57.2
+  },
+  {
+    "startTime": "2020/2/26",
+    "name": "民政部：对因疫情在家隔离孤寡老人、留守儿童进行排查摸底",
+    "type": "Policies and measures of nation",
+    "value": 56.5
+  },
+  {
+    "startTime": "2020/2/29",
+    "name": "《中国-世界卫生组织新型冠状病毒肺炎（COVID-19）联合考察报告》发布",
+    "type": "Policies and measures of nation",
+    "value": 62.5
+  },
+  {
+    "startTime": "2020/2/29",
+    "name": "湖北疫情风险等级评估报告首次发布",
+    "type": "Policies and measures of Hubei Province",
+    "value": 56.7
+  },
+  {
+    "startTime": "2020/3/1",
+    "name": "交通运输部：全面暂停离汉、离鄂的网约车、顺风车业务",
+    "type": "Policies and measures of nation",
+    "value": 57.0
+  },
+  {
+    "startTime": "2020/3/2",
+    "name": "联合调查组、湖北省及北京市对“女子离汉抵京事件”作出通报",
+    "type": "Policies and measures of nation",
+    "value": 67.0
+  },
+  {
+    "startTime": "2020/3/2",
+    "name": "中国口罩日产能产量双双突破1亿只",
+    "type": "Policies and measures of nation",
+    "value": 63.3
+  },
+  {
+    "startTime": "2020/3/2",
+    "name": "北京新高考举行适应性测试",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 57.4
+  },
+  {
+    "startTime": "2020/3/2",
+    "name": "武汉：外地滞留者每人可申领3000元政府临时救助",
+    "type": "Policies and measures of Wuhan City",
+    "value": 55.2
+  },
+  {
+    "startTime": "2020/3/3",
+    "name": "武汉华南海鲜市场开展大规模消杀",
+    "type": "Policies and measures of Wuhan City",
+    "value": 53.0
+  },
+  {
+    "startTime": "2020/3/5",
+    "name": "国家卫健委等三部门表彰防疫工作先进集体和个人",
+    "type": "Policies and measures of nation",
+    "value": 62.1
+  },
+  {
+    "startTime": "2020/3/6",
+    "name": "湖北全面禁止食用野生动物",
+    "type": "Policies and measures of nation",
+    "value": 56.2
+  },
+  {
+    "startTime": "2020/3/6",
+    "name": "4月份部分疫苗有望进入临床",
+    "type": "Policies and measures of nation",
+    "value": 61.1
+  },
+  {
+    "startTime": "2020/3/6",
+    "name": "中央指导组回应武汉居民大喊“假的假的“",
+    "type": "Policies and measures of nation",
+    "value": 50.0
+  },
+  {
+    "startTime": "2020/3/6",
+    "name": "武汉市公布首批无疫情小区 最高可获奖励20万元",
+    "type": "Policies and measures of Wuhan City",
+    "value": 56.7
+  },
+  {
+    "startTime": "2020/3/6",
+    "name": "夏思思等4人被追授湖北省三八红旗手",
+    "type": "Policies and measures of Hubei Province",
+    "value": 49.2
+  },
+  {
+    "startTime": "2020/3/7",
+    "name": "中国政府向世卫组织捐款2000万美元",
+    "type": "Policies and measures of nation",
+    "value": 55.1
+  },
+  {
+    "startTime": "2020/3/9",
+    "name": "2020年3·15晚会将延迟播出",
+    "type": "Policies and measures of nation",
+    "value": 53.6
+  },
+  {
+    "startTime": "2020/3/7",
+    "name": "湖北医生在家猝死未认定工伤决定被撤销",
+    "type": "Policies and measures of Hubei Province",
+    "value": 50.1
+  },
+  {
+    "startTime": "2020/2/3",
+    "name": "武汉建设方舱医院",
+    "type": "Policies and measures of Wuhan City",
+    "value": 62.9
+  },
+  {
+    "startTime": "2020/3/9",
+    "name": "湖北中低风险地区持绿码人员全省通行",
+    "type": "Policies and measures of Hubei Province",
+    "value": 59.3
+  },
+  {
+    "startTime": "2020/3/11",
+    "name": "湖北潜江取消26号通告",
+    "type": "Policies and measures of Hubei Province",
+    "value": 55.7
+  },
+  {
+    "startTime": "2020/3/11",
+    "name": "中国抗疫专家组启程赴意大利",
+    "type": "Policies and measures of nation",
+    "value": 60.9
+  },
+  {
+    "startTime": "2020/3/11",
+    "name": "住建部：武汉市生活垃圾无害化处理达100%",
+    "type": "Policies and measures of Wuhan City",
+    "value": 49.9
+  },
+  {
+    "startTime": "2020/3/13",
+    "name": "中国关闭珠穆朗玛峰通道",
+    "type": "Policies and measures of nation",
+    "value": 48.3
+  },
+  {
+    "startTime": "2020/3/14",
+    "name": "北京建议居民非必要应暂停赴疫情国家",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 49.9
+  },
+  {
+    "startTime": "2020/3/14",
+    "name": "北京：未参加医保的境外输入病例，原则上自费",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 55.0
+  },
+  {
+    "startTime": "2020/3/14",
+    "name": "火车学生票使用时间延长至5月31日",
+    "type": "Policies and measures of nation",
+    "value": 55.4
+  },
+  {
+    "startTime": "2020/3/15",
+    "name": "隐瞒境外回国事实河南焦作4人被拘",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 50.1
+  },
+  {
+    "startTime": "2020/3/15",
+    "name": "武汉卫健委：方舱医院消毒后将恢复原本功能",
+    "type": "Policies and measures of Wuhan City",
+    "value": 50.9
+  },
+  {
+    "startTime": "2020/3/15",
+    "name": "武汉卫健委：方舱医院消毒后将恢复原本功能",
+    "type": "Policies and measures of Wuhan City",
+    "value": 50.9
+  },
+  {
+    "startTime": "2020/3/16",
+    "name": "五部门：依法惩治妨害国境卫生检疫违法犯罪",
+    "type": "Policies and measures of nation",
+    "value": 65.1
+  },
+  {
+    "startTime": "2020/3/16",
+    "name": "北京小汤山医院启用",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 61.2
+  },
+  {
+    "startTime": "2020/3/17",
+    "name": "军事科学院军事医学研究院成功研制重组新冠疫苗",
+    "type": "Policies and measures of nation",
+    "value": 60.1
+  },
+  {
+    "startTime": "2020/3/18",
+    "name": "全国首趟湖北就业专列发车",
+    "type": "Policies and measures of Hubei Province",
+    "value": 56.5
+  },
+  {
+    "startTime": "2020/3/19",
+    "name": "湖北全省认可外省健康码",
+    "type": "Policies and measures of Hubei Province",
+    "value": 57.1
+  },
+  {
+    "startTime": "2020/3/19",
+    "name": "国家监委调查组发布涉及李文亮医生有关情况调查的通报",
+    "type": "Policies and measures of nation",
+    "value": 66.1
+  },
+  {
+    "startTime": "2020/3/26",
+    "name": "中国外交部、国家移民管理局：暂停外国人持有效签证入境",
+    "type": "Policies and measures of nation",
+    "value": 65.1
+  },
+  {
+    "startTime": "2020/3/28",
+    "name": "武汉地铁正式恢复运营",
+    "type": "Policies and measures of Hubei Province",
+    "value": 60.9
+  },
+  {
+    "startTime": "2020/3/31",
+    "name": "广东禁食所有人工饲养陆生野生动物",
+    "type": "Policies and measures of other provinces and cities",
+    "value": 54.7
+  },
+  {
+    "startTime": "2020/4/2",
+    "name": "民航局：首批300吨31万份健康包将发给留学生",
+    "type": "Policies and measures of nation",
+    "value": 47.5
+  },
+  {
+    "startTime": "2020/4/3",
+    "name": "国务院：2020年4月4日举行全国性哀悼活动",
+    "type": "Policies and measures of nation",
+    "value": 65.3
+  },
+  {
+    "startTime": "2020/4/6",
+    "name": "驻美使馆明确优先安排小留学生乘机",
+    "type": "Policies and measures of nation",
+    "value": 57.9
+  },
+  {
+    "startTime": "2020/4/7",
+    "name": "武汉解封",
+    "type": "Policies and measures of Wuhan City",
+    "value": 82.6
+  }
+]

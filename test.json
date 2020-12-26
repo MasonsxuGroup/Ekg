@@ -1,0 +1,283 @@
+[
+  {
+    "startTime": "2019/12/31",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "国家卫健委专家组抵达武汉检测核实情况",
+            "value": 59.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/1",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "8名涉嫌散布武汉肺炎谣言者被警方依法查处",
+            "value": 49.7
+          },
+          {
+            "name": "华南海鲜市场休市整治",
+            "value": 53.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/7",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "2020年武汉市“两会”于1月6日至10日召开",
+            "value": 57.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/11",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "2020年湖北省“两会”召开",
+            "value": 60.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/19",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "国家卫健委向全国各省派出工作组指导疫情防控工作",
+            "value": 44.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/20",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "国家卫健委将新型肺炎纳入法定传染病乙类管理",
+            "value": 42.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/21",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "武汉宣布对进出武汉人员进行管控",
+            "value": 62.8
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "国家医保局：对确诊为新型肺炎患者采取特殊报销政策",
+            "value": 55.8
+          },
+          {
+            "name": "交通运输部启动Ⅱ级应急响应",
+            "value": 52.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/22",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "湖北省启动突发公共事件二级应急响应",
+            "value": 53.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/23",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "武汉宣布“封城”",
+            "value": 73.4
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "浙江、湖南、广东相继启动重大公共突发卫生事件一级响应",
+            "value": 63.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/24",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "湖北省启动突发公共事件一级应急响应",
+            "value": 61.4
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "国务院办公厅发布《关于征集新型冠状病毒感染的肺炎疫情防控工作问题线索及意见建议的公告》",
+            "value": 49.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "武汉新建两所医院:“火神山”和“雷神山”",
+            "value": 83.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/25",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "武汉中心城区实行机动车禁行管理",
+            "value": 48.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "全国30个省市自治区启动重大突发公共卫生事件一级响应",
+            "value": 48.9
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "党中央成立应对疫情工作领导小组",
+            "value": 59.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/26",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "国务院办公厅发布关于延长2020年春节假期的通知",
+            "value": 67.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/27",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "教育部发布关于2020年春季学期延期开学的通知",
+            "value": 61.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/28",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "武汉成立专项督查组 督查患者“应住尽住”情况",
+            "value": 49.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "黄冈版小汤山正式启用",
+            "value": 55.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/29",
+    "events": [
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "中国内地31省份全部启动突发公共卫生事件一级响应",
+            "value": 50.2
+          }
+        ]
+      }
+    ]
+  }
+]

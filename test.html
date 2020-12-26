@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#t1").click(function () {
+                document.getElementById("p1").innerHTML = 'txt'
+            });
+            $('#t2').click(function () {
+                window.location.reload()
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <p id="p1">This is a paragraph.</p>
+    <button id="t1">复制每个 p 元素，然后追加到 body 元素</button>
+    <button id="t2">刷新</button>
+</body>
+
+</html>

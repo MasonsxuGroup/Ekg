@@ -1,17 +1,24 @@
 /* CSS styles used by custom infobox template */
-.customInfobox{
+.customInfobox1,
+.customInfobox2,
+.customInfobox3,
+.customInfobox4 {
   background-color: #fff;
-  /* color: #000; */
-  /* max-width: 200px; */
-  /* border-radius: 10px; */
-  width: 300px !important;
+  width: 370px !important;
   padding: 0 15px 10px 0;
   font-size: 12px;
   pointer-events: auto !important;
   position: absolute;
 }
-
-.customInfobox .title{
+.customInfobox1,
+.customInfobox2,
+.customInfobox4 {
+  display: none;
+}
+.customInfobox1 .title,
+.customInfobox2 .title,
+.customInfobox3 .title,
+.customInfobox4 .title {
   font-size: 14px;
   font-weight: bold;
   /* margin-bottom: 5px; */
@@ -24,7 +31,7 @@ a.customInfoboxCloseButton:visited {
   position: absolute;
   top: 0px;
   /* right: 0px; */
-  left: 302px;
+  left: 372px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: 14px;
@@ -35,23 +42,33 @@ a.customInfoboxCloseButton:visited {
   height: 25px;
 }
 #box-center {
-  /* float: left; */
   font-size: 15px;
   font-weight: 200;
-
   height: 20px;
 }
 #box-center #things {
-  /* border: 0 1px 0 0 solid #000; */
-  /* border-top: 0; */
-  /* width: 72px; */
   padding: 0 5px;
   border-right: 1px solid rgb(58, 66, 79);
   background-color: #cccccc;
 }
 #box-bottom {
   position: relative;
-  /* top: 45px; */
-  /* height: 115px; */
+  padding-left: 2px;
   border: 1px solid rgb(58, 66, 79);
+}
+#wuhan_events,
+#wuhan_startTime,
+#wuhan_influence,
+#hubei_startTime,
+#hubei_events,
+#hubei_influence,
+#nation_startTime,
+#nation_events,
+#nation_influence,
+#others_startTime,
+#others_events,
+#others_influence {
+  color: black;
+  width: 300px;
+  display: inline-block;
 }

@@ -1,0 +1,1273 @@
+[
+  {
+    "startTime": "2019/12/31",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The National Health Commission's expert team arrived in Wuhan to check and verify the situation",
+            "value": 59.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/1",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "8 suspects of spreading Wuhan pneumonia rumors were investigated and punished by the police according to law",
+            "value": 49.7
+          },
+          {
+            "name": "South China Seafood Market is closed for renovation",
+            "value": 53.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/7",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "2020 Wuhan 'Two Sessions' will be held from January 6 to 10",
+            "value": 57.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/11",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei Province 'Two Sessions' Held in 2020",
+            "value": 60.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/19",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The National Health Commission dispatched working groups to provinces across the country to guide epidemic prevention and control work",
+            "value": 44.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/20",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The National Health Commission puts new pneumonia in the management of statutory infectious diseases",
+            "value": 42.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/21",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan announced the control of personnel entering and exiting Wuhan",
+            "value": 62.8
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "National Medical Insurance Administration: Special reimbursement policy for patients diagnosed with new pneumonia",
+            "value": 55.8
+          },
+          {
+            "name": "The Ministry of Transport initiates Level II emergency response",
+            "value": 52.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/22",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei Province initiates secondary emergency response to public emergencies",
+            "value": 53.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/23",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan announced the 'close the city'",
+            "value": 73.4
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Zhejiang, Hunan, and Guangdong have successively initiated first-level responses to major public health emergencies",
+            "value": 63.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/24",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei Province initiates first-level emergency response to public emergencies",
+            "value": 61.4
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "《Announcement on the solicitation of clues, opinions and suggestions on the prevention and control of pneumonia epidemic caused by new coronavirus infection》was issued by the General Office of the State Council",
+            "value": 49.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Two new hospitals in Wuhan: 'Huoshenshan' and 'Leishenshan'",
+            "value": 83.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/25",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Motor vehicle ban management implemented in the central city of Wuhan",
+            "value": 48.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "30 provinces, municipalities and autonomous regions across the country initiated the first-level response to major public health emergencies",
+            "value": 48.9
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The Party Central Committee established a leading group for epidemic response",
+            "value": 59.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/26",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The General Office of the State Council issued a notice on extending the 2020 Spring Festival holiday",
+            "value": 67.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/27",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The Ministry of Education issued a notice on the extension of the 2020 spring semester",
+            "value": 61.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/28",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan sets up a special supervision team to supervise patients' condition of living",
+            "value": 49.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Huanggang version of Xiaotangshan officially opened",
+            "value": 55.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/29",
+    "events": [
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "All 31 provinces in mainland China initiate first-level response to public health emergencies",
+            "value": 50.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/1/30",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The General Office of the State Council issued an emergency notice on organizing the resumption of work and production and scheduling arrangements for key epidemic prevention and control materials production enterprises",
+            "value": 50.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/2",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei announces the status of receiving donations",
+            "value": 46.1
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Huoshenshan Hospital completed delivery",
+            "value": 57.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/3",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Seven departments including the Ministry of Communications: Orderly and gradually resume traffic outside Hubei",
+            "value": 51.5
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan Jianshe Fangcai Hospital",
+            "value": 62.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/4",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Three leaders of Hubei Provincial Red Cross are held accountable",
+            "value": 61.4
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Macau suspends gaming and related entertainment industries for half a month",
+            "value": 54.1
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The central government made it clear: another 2,000 medical staff will be added to support Hubei",
+            "value": 47.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/5",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "《Pneumonia diagnosis and treatment plan for new coronavirus infection（Trial fifth edition）》Announce",
+            "value": 65.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/7",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Xi Jinping talks with US President Trump on the phone at an appointment",
+            "value": 59.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/8",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Wang He is qualified to be a member and standing member of the Hubei Provincial Party Committee",
+            "value": 58.5
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan Leishenshan Hospital was delivered to use and admitted the first batch of patients",
+            "value": 50.5
+          },
+          {
+            "name": "Wuhan requisitioned a number of colleges and universities to transform dormitories into designated medical centers",
+            "value": 56.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/10",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Xi Jinping investigates and guides the prevention and control of the new crown pneumonia epidemic in Beijing",
+            "value": 65.4
+          },
+          {
+            "name": "The central steering group went to Hubei to interview 3 people including the deputy mayor of Wuhan",
+            "value": 60.7
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Shuangshuang, Secretary of the Party Leadership Group of the Hubei Provincial Health Commission, was removed ",
+            "value": 62.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/11",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Ministry of Education: Forced all teachers to record and broadcast courses must be stopped",
+            "value": 58.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/13",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Hubei Provincial Party Committee is mainly responsible for the adjustment of comrade positions",
+            "value": 66.3
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Sichuan First Auxiliary Police Suspended for Not Cooperating with Epidemic Detection Point",
+            "value": 55.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/14",
+    "events": [
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "It is clear that the start of school is delayed in many places and can be filled in summer",
+            "value": 60.7
+          },
+          {
+            "name": "Zhangjiajie CDC chief was removed from office when he went to Thailand to escape the epidemic",
+            "value": 57.7
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The Central Guidance Group to Hubei: Initiated a total offensive in the defense of Wuhan and Hubei",
+            "value": 57.3
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei launches three-level response to major meteorological disasters",
+            "value": 53.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/15",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Central Bank: China will not see large-scale inflation",
+            "value": 56.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/16",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei notified 8 people accountable for 6 cases of ineffective epidemic prevention",
+            "value": 53.3
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Many people hanged to death in Wuhan community for underreporting suspected cases",
+            "value": 54.6
+          },
+          {
+            "name": "Wuhan introduces measures to further strengthen epidemic prevention and control in public places",
+            "value": 55.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/17",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The production and sales problem of medical masks can be judged indefinitely",
+            "value": 57.0
+          },
+          {
+            "name": "Ministry of Education: All TOEFL GRE tests will be cancelled nationwide in March",
+            "value": 57.2
+          },
+          {
+            "name": "Nearly 10% of critically ill medical personnel nationwide invest in Wuhan",
+            "value": 57.2
+          },
+          {
+            "name": "Two departments: Eligible personnel who died of new coronary pneumonia at work should be assessed as martyrs",
+            "value": 60.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/18",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Xi Jinping talks with French President Macron on the phone at appointment",
+            "value": 54.1
+          },
+          {
+            "name": "The Standing Committee of the State Council decided to reduce or exempt corporate social insurance premiums and implement the policy of deferring payment of housing provident funds",
+            "value": 60.7
+          },
+          {
+            "name": "Ministry of Industry and Information Technology: SMS can provide 1.6 billion mobile phone users“Proof of itinerary”",
+            "value": 60.7
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan re-discovers home-confirmed patients will be held accountable",
+            "value": 57.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/19",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The National Health Commission issued the ``Diagnosis and treatment plan for pneumonia caused by new coronavirus（Pilot Sixth Edition）》",
+            "value": 64.2
+          },
+          {
+            "name": "Xi Jinping: We must attach great importance to the protection and care of medical staff",
+            "value": 57.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/20",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Xi Jinping spoke on the phone with Pakistani Prime Minister Imran Khan",
+            "value": 53.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/21",
+    "events": [
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Many people in Shandong and Zhejiang were dismissed due to poor epidemic prevention and control in prisons",
+            "value": 61.3
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei prison system confirms 271 cases of new coronary pneumonia, Wuhan women's prison warden removed",
+            "value": 63.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/23",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Coordinating the promotion of the new crown pneumonia epidemic prevention and control and economic and social development work deployment meeting held in Beijing",
+            "value": 64.3
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Many countries have lowered the emergency response level of the new crown pneumonia epidemic",
+            "value": 61.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/24",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan announced that the announcement of the opening of the Lihan Channel is invalid",
+            "value": 64.5
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Seizure of masks in Dali was severely investigated: Secretary of the Municipal Party Committee was removed from the Mayor",
+            "value": 61.7
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Qingdao: Strictly prevent the import of foreign personnel and resolutely prevent the spread of the import of the epidemic",
+            "value": 57.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/25",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The State Council issued a document on epidemic prevention and control in primary and secondary schools: teachers are recommended to wear masks to teach",
+            "value": 60.9
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Weihai: All entrants from Japan, South Korea and other countries live together for 14 days free of charge",
+            "value": 56.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Issued by the State Council《Notice on Regulating Medical Institutions to Carry out Clinical Research on Drug Treatment of New Coronavirus Pneumonia》",
+            "value": 44.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/26",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The central multi-department joint investigation team investigates the incident of prisoners leaving Han and arriving in Beijing",
+            "value": 65.5
+          },
+          {
+            "name": "Ministry of Civil Affairs: Investigating the isolation of widowed elderly and left-behind children at home due to the epidemic",
+            "value": 56.5
+          },
+          {
+            "name": "Wang Yi talks on the phone with Japanese and Korean foreign ministers",
+            "value": 55.5
+          },
+          {
+            "name": "Comrade Xi Jinping made donations to support epidemic prevention and control work",
+            "value": 51.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/27",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The Ministry of Justice publicly solicits opinions on the Regulations on the Administration of Permanent Residence of Foreigners",
+            "value": 52.2
+          },
+          {
+            "name": "Ministry of Education: National Higher Education Self-study Examination Postponed in April",
+            "value": 57.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/2/29",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "《China-WHO Joint Investigation Report on Novel Coronavirus Pneumonia (COVID-19)》发布",
+            "value": 62.5
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei epidemic risk assessment report released for the first time",
+            "value": 56.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/1",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Ministry of Transport: Suspend Lihan and Lie's online ride-hailing and ride-hailing services",
+            "value": 57.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/2",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The Joint Investigation Team, Hubei Province and Beijing Municipality announced the event of women leaving from Wuhan and arriving in Beijing",
+            "value": 67.0
+          },
+          {
+            "name": "China's daily production capacity of masks both exceed 100 million",
+            "value": 63.3
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Beijing New College Entrance Examination Holds Adaptability Test",
+            "value": 57.4
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan: Each person stranded abroad can apply for 3,000 yuan temporary government assistance",
+            "value": 55.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/3",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan South China Seafood Market launches large-scale killing",
+            "value": 53.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/5",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The National Health Commission and other three departments commend advanced collectives and individuals for epidemic prevention work",
+            "value": 62.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/6",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Hubei bans the consumption of wild animals",
+            "value": 56.2
+          },
+          {
+            "name": "Some vaccines are expected to enter the clinic in April",
+            "value": 61.1
+          },
+          {
+            "name": "The Central Steering Group responded to Wuhan residents yelling 'It's deceptive'",
+            "value": 50.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan City announces the first batch of epidemic-free communities, rewards up to 200,000 yuan",
+            "value": 56.7
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Xia Sisi and 4 others were posthumously awarded the March 8th Red Banner Bearers in Hubei Province",
+            "value": 49.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/7",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The Chinese government donates US$20 million to WHO",
+            "value": 55.1
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei doctor's sudden death at home without identification of work injury decision was revoked",
+            "value": 50.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/9",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "2020 3·15 evening will be delayed",
+            "value": 53.6
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "People holding green codes in low- and medium-risk areas in Hubei pass through the province",
+            "value": 59.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/11",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei Qianjiang cancels Circular 26",
+            "value": 55.7
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Chinese Anti-epidemic Expert Team Departs to Italy",
+            "value": 60.9
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Ministry of Housing and Urban-Rural Development: 100% harmless treatment of domestic garbage in Wuhan",
+            "value": 49.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/13",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "China closes the Everest channel",
+            "value": 48.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/14",
+    "events": [
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Beijing advises residents to suspend travel to epidemic countries unless necessary",
+            "value": 49.9
+          },
+          {
+            "name": "Beijing: Foreign imported cases not covered by medical insurance are at their own expense in principle",
+            "value": 55.0
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Train student ticket usage time extended to May 31",
+            "value": 55.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/15",
+    "events": [
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Four people detained in Jiaozuo, Henan for concealing the fact of returning from abroad",
+            "value": 50.1
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Wuhan Health Commission: Fangcang shelter hospital will restore its original function after disinfection",
+            "value": 50.9
+          },
+          {
+            "name": "Wuhan Health Commission: Fangcang shelter hospital will restore its original function after disinfection",
+            "value": 50.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/16",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Five departments: Punish illegal crimes that obstruct border health and quarantine in accordance with the law",
+            "value": 65.1
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Beijing Xiaotangshan Hospital opened",
+            "value": 61.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/17",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The Academy of Military Medicine of the Academy of Military Sciences successfully developed a recombinant new crown vaccine",
+            "value": 60.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/18",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "The country's first Hubei employment train departs",
+            "value": 56.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/19",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Hubei Province recognized the health code of other provinces",
+            "value": 57.1
+          }
+        ]
+      },
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The investigation team of the State Supervision Commission issued a notice involving the investigation of Dr. Li Wenliang",
+            "value": 66.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/26",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Chinese Ministry of Foreign Affairs and National Immigration Administration: Suspend entry of foreigners with valid visas",
+            "value": 65.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/28",
+    "events": [
+      {
+        "type": "Policies and measures of Hubei Province",
+        "measure": [
+          {
+            "name": "Wuhan Metro officially resumes operations",
+            "value": 60.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/3/31",
+    "events": [
+      {
+        "type": "Policies and measures of other provinces and cities",
+        "measure": [
+          {
+            "name": "Guangdong fasts all captive-raised terrestrial wild animals",
+            "value": 54.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/4/2",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "Civil Aviation Administration: The first batch of 300 tons of 310,000 health packs will be distributed to international students",
+            "value": 47.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/4/3",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "State Council: National mourning activities will be held on April 4, 2020",
+            "value": 65.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/4/6",
+    "events": [
+      {
+        "type": "Policies and measures of nation",
+        "measure": [
+          {
+            "name": "The embassy in the U.S. clearly prioritizes primary school students",
+            "value": 57.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "startTime": "2020/4/7",
+    "events": [
+      {
+        "type": "Policies and measures of Wuhan City",
+        "measure": [
+          {
+            "name": "Unblock Wuhan",
+            "value": 82.6
+          }
+        ]
+      }
+    ]
+  }
+]
