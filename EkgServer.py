@@ -15,8 +15,7 @@ def index():
 def extract():
     if request.method == 'POST':
         result = request.get_json()
-        result_dict = extraction.ExtractData.load_customization(
-            result['content'])
+        result_dict = extraction.ExtractData.load_customization(result['content'])
         return jsonify(result_dict)
 
 
