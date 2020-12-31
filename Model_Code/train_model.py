@@ -136,7 +136,7 @@ def train_model(model_path, train_file_path, test_file_path):
 def run(
     folderpath_origin, folderpath_dest, model_path, train_file_path, test_file_path
 ):
-    """ 训练模型
+    """ 训练模型启动方法
 
     Args:
         :folderpath_origin (str): Folder，待处理文件路径
