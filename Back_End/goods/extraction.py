@@ -22,7 +22,10 @@ class ExtractData:
             number_data = ''
             for index in range(len(result_list[0])):
                 result_dict = {}
-                if ((str(result_list[0][index]).isdigit() is False) and (str(result_list[0][index][:-1]).isdigit() is False)) or ((index == len(result_list[0]) - 1) and (number_data == '')):
+                if (
+                    (str(result_list[0][index]).isdigit() is False)
+                    and (str(result_list[0][index][:-1]).isdigit() is False)
+                ) or ((index == len(result_list[0]) - 1) and (number_data == '')):
                     result_dict["item"] = result_list[0][index]
                     result_dict["pos"] = result_list[1][index]
                     result_data_dict["data"].append(result_dict)
@@ -31,9 +34,15 @@ class ExtractData:
                     result_dict["item"] = number_data
                     result_dict["pos"] = result_list[1][index]
                     result_data_dict["data"].append(result_dict)
-                elif (str(result_list[0][index]).isdigit()) and ((str(result_list[0][index+1]).isdigit()) or (str(result_list[0][index+1][:-1]).isdigit())):
+                elif (str(result_list[0][index]).isdigit()) and (
+                    (str(result_list[0][index + 1]).isdigit())
+                    or (str(result_list[0][index + 1][:-1]).isdigit())
+                ):
                     number_data += result_list[0][index]
-                elif ((str(result_list[0][index][:-1]).isdigit()) or (str(result_list[0][index]).isdigit())) and (str(result_list[0][index+1]).isdigit() is False):
+                elif (
+                    (str(result_list[0][index][:-1]).isdigit())
+                    or (str(result_list[0][index]).isdigit())
+                ) and (str(result_list[0][index + 1]).isdigit() is False):
                     number_data += result_list[0][index]
                     result_dict["item"] = number_data
                     result_dict["pos"] = result_list[1][index]
@@ -87,7 +96,7 @@ class ExtractData:
                     result_dict["ORG"].append(row["item"])
                 elif row["pos"] == 'PER' and row["item"] not in result_dict["PER"]:
                     result_dict["PER"].append(row["item"])
-                if index == (len(result_data_dict['data'])-1):
+                if index == (len(result_data_dict['data']) - 1):
                     figure_data_dict['data'].append(result_dict)
             return figure_data_dict
         except Exception as e:

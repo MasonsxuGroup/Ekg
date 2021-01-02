@@ -81,13 +81,19 @@ def marker_data(all_data):
                 for index in range(0, len(cell['item'])):  # 拆分字符串，并合并字符串中的数字
                     extract_data_list = []
                     # 判断是否为字符串的开始 index，并设置长度避免超出字符串 index
-                    if (str(cell['item'][index]).isdigit() is False) or (index == len(cell['item']) - 1):
+                    if (str(cell['item'][index]).isdigit() is False) or (
+                        index == len(cell['item']) - 1
+                    ):
                         marker = 'I-' + cell['marker']
                         extract_data_list.append(cell['item'][index])
                         extract_data_list.append(marker)
-                    elif (str(cell['item'][index]).isdigit()) and (str(cell['item'][index + 1]).isdigit()):
+                    elif (str(cell['item'][index]).isdigit()) and (
+                        str(cell['item'][index + 1]).isdigit()
+                    ):
                         number_data += str(cell['item'][index])
-                    elif str(cell['item'][index]).isdigit() and (str(cell['item'][index + 1]).isdigit() is False):
+                    elif str(cell['item'][index]).isdigit() and (
+                        str(cell['item'][index + 1]).isdigit() is False
+                    ):
                         number_data += str(cell['item'][index])
                         marker = 'I-' + cell['marker']
                         extract_data_list.append(number_data)
@@ -95,8 +101,9 @@ def marker_data(all_data):
                         number_data = ''
                     if len(extract_data_list) == 2:
                         extract_data_lists.append(extract_data_list)
-                extract_data_lists[marker_len][1] = 'B' + \
-                    extract_data_lists[marker_len][1][1:]
+                extract_data_lists[marker_len][1] = (
+                    'B' + extract_data_lists[marker_len][1][1:]
+                )
         extract_data_lists.append('')
     return extract_data_lists
 
@@ -136,7 +143,7 @@ def save_mean_data(data, amount, folderpath_dest):
     """
 
     all_data_length = len(data)
-    mean_data_length = all_data_length//amount
+    mean_data_length = all_data_length // amount
     start = 0
     end = mean_data_length
     print('开始平均所有数据')
@@ -144,9 +151,8 @@ def save_mean_data(data, amount, folderpath_dest):
         while len(data[end - 1]) != 0:
             end += 1
         else:
-            sheet = pd.DataFrame(data[start:end - 1])
-            filename = folderpath_dest + 'all_extract_part_' + \
-                str(index) + '.txt'
+            sheet = pd.DataFrame(data[start : end - 1])
+            filename = folderpath_dest + 'all_extract_part_' + str(index) + '.txt'
             sheet.to_csv(filename, index=None, header=None)
             start = end
             end += mean_data_length

@@ -17,7 +17,11 @@ def check_data(folderpath_origin, folderpath_dest):
     new_all_data_list = []
     for data_index in trange(len(all_data)):
         data = all_data[data_index]
-        if (str(data[0]) != 'nan') and (not str(data[0]).isdigit()) and (len(data[0]) > 1):
+        if (
+            (str(data[0]) != 'nan')
+            and (not str(data[0]).isdigit())
+            and (len(data[0]) > 1)
+        ):
             for i in range(len(data[0])):
                 new_data_list = []
                 new_data_list.append(data[0][i])
@@ -50,7 +54,11 @@ def check_datas(folderpath_origin, folderpath_dest):
             new_all_data_list = []
             for data_index in trange(len(all_data)):
                 data = all_data[data_index]
-                if (str(data[0]) != 'nan') and (not str(data[0]).isdigit()) and (len(data[0]) > 1):
+                if (
+                    (str(data[0]) != 'nan')
+                    and (not str(data[0]).isdigit())
+                    and (len(data[0]) > 1)
+                ):
                     for i in range(len(data[0])):
                         new_data_list = []
                         new_data_list.append(data[0][i])
@@ -65,5 +73,7 @@ def check_datas(folderpath_origin, folderpath_dest):
 
 if __name__ == '__main__':
     # check_datas('Data_Pre/Marked_Data/', 'Data_Pre/Marked_Data/')
-    check_data('Data_Pre/Extract_Data_Pre/all_extract_part_4.txt',
-               '/Users/macx/Desktop/all_extract_part_4.txt')
+    check_data(
+        'Data_Pre/Extract_Data_Pre/all_extract_part_4.txt',
+        '/Users/macx/Desktop/all_extract_part_4.txt',
+    )
